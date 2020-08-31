@@ -7,5 +7,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :trainnings, through: :orders
   has_many :sold_trainnings, class_name: "User"
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :address, presence: true
+  validates :email, presence: true
 end
