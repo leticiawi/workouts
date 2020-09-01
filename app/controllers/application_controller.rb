@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     return unless current_user && request.get?
 
     path = new_profile_path unless current_user.valid?
-    path = user_dashboards_path if request.path == root_path
+    path = dashboard_path if request.path == root_path
 
     redirect_to path unless path.nil? || path == request.path
   end

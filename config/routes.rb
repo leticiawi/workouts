@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:new, :create]
   get "dashboard", to: "profiles#dashboard"
-  # resources :trainnings
+  resources :trainnings
 
 
   root to: 'pages#home'

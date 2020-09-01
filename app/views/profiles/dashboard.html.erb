@@ -1,8 +1,25 @@
-<h1>Current User <%= current_user.name %></h1>
 
-<!-- inserir botão de trainner na navbar -->
-<% if current_user.professional? %>
-<%# render xxx todos os treinos %>
-<% else %>
-<%= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
-<% end %>
+<div class="card" style="width: 20rem;">
+  <img class="card-img-top" src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" alt="Card image cap" height="200px" >
+  <div class="card-body">
+    <h2>Current User <%= current_user.name %></h2>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <div class="card-body">
+    <% if current_user.trainer? %>
+    <%# render xxx todos os treinos %>
+    <% else %>
+    <%= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <%= form_tag trainnings_path, method: :get do %>
+  <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Enter address" %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+
+
