@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user
     if @profile.update(user_params)
-      redirect to root_path
+      redirect_to user_dashboards_path
     else
       render :new
     end

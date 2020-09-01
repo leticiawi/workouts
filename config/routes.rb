@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get 'user_dashboards/index'
   devise_for :users
 
   resources :profiles, only: [:new, :create]
   resources :user_dashboards, only: [:index]
-  resources :trainnings
+  # resources :trainnings
 
 
   root to: 'pages#home'
