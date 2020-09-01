@@ -1,5 +1,3 @@
 class Category < ApplicationRecord
-  def index
-    @category = Category.all
-  end
+  has_many :trainnings, dependent: :destroy
 end
