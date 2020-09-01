@@ -1,4 +1,8 @@
 class TrainningsController < ApplicationController
+  def index
+    @trainnings = Trainning.all
+  end
+
   def new
     @trainning = Trainning.new
   end
