@@ -1,9 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  before_action :configure_permited_parameter, if: :devise_controller?
+  before_action :dispatch_user
 
-  def configure_permited_parameter
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :address])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :address])
+  def dispatch_user
+    return unless current_user && request.get?
+
+    path = new_profile_path unless current_user.valid?
+    path = user_dashboards_path if request.path == root_path
+
+    redirect_to path unless path.nil? || path == request.path
   end
 end
