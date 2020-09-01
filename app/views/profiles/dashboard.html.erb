@@ -1,5 +1,8 @@
 <h1>Current User <%= current_user.name %></h1>
 
 <!-- inserir botão de trainner na navbar -->
-
+<% if current_user.professional? %>
+<%# render xxx todos os treinos %>
+<% else %>
 <%= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+<% end %>
