@@ -12,6 +12,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def dashboard
+    redirect_to root_path unless user_signed_in?
+  end
+
   private
 
   def user_params
