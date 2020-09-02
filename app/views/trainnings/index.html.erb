@@ -1,8 +1,4 @@
-<div class="container">
-  <h2 id="congrats">Congrats, you are one step closer into changing your life</h2>
-</div>
-
-<div class="container">
+ <div class="container">
   <div class="row">
     <div class=" col-6">
       <div class="trainning-card">
@@ -24,7 +20,29 @@
     </div>
   </div>
 </div>
-
 <%= link_to "view details", trainning_path(trainning), class: "btn btn-primary" %>
 
 
+
+
+  <h3>*****INDEX OF TRAINNINGS******</h3>
+<div class="d-flex justify-content-center p-3">
+  <div class="row">
+    <% @trainnings.each do |trainning| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-trip">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+          <div class="card-trip-infos">
+            <div>
+            <h2>Coach: <%= trainning.user.name %></h2>
+              <p><%= trainning.description %></p>
+            </div>
+              <h2 class="card-trip-pricing"><%= trainning.category.name %></h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          </div>
+          <%= link_to "view deatils", trainning_path(trainning), class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

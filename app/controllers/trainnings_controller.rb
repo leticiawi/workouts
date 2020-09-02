@@ -3,16 +3,25 @@ class TrainningsController < ApplicationController
     @trainnings = Trainning.all
   end
 
-  def new
-    @trainning = Trainning.new
+  def show
+    @trainning = Trainning.find(params[:id])
   end
+
+  def new
+    if current_user.trainer == true
+    @trainning = Trainning.new
+  else
+    flash[:notice] = 'Vc nao pode acessar essa pagina!'
+    redirect_to root_path
+  end
+end
 
   def create
     @trainning = Trainning.new(trainning_params)
     @trainning.user_id = current_user
 
     if @trainning.save
-      redirect to root_path
+      redirect to @trainning
     else
       render :new
     end
@@ -21,6 +30,6 @@ class TrainningsController < ApplicationController
   private
 
   def trainnings_params
-    params.require(:trainng).permit(:duration, :address)
+    params.require(:trainning).permit(:duration, :address)
   end
 end

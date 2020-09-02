@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :profiles, only: [:new, :create]
-  resources :user_dashboards, only: [:index]
-  # resources :trainnings
+  get "dashboard", to: "profiles#dashboard"
+  get "trainer_board", to: "profiles#dashboard"
+  resources :trainnings
 
 
   root to: 'pages#home'
