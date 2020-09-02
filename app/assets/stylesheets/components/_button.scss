@@ -1,0 +1,37 @@
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 30px;
+  background: #F7B32D;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #F7B32D;
+  color: white;
+}
+
+.btn-flat-white {
+  color: black;
+  padding: 8px 24px;
+  border-radius: 30px;
+  background: white;
+  transition: background 0.3s ease;
+}
+
+
+.btn-trainer {
+  font-size: 13px;
+  margin-right: 235px;
+  background: rgba(156, 156, 156, 0.671);
+  color:rgb(255, 255, 255);
+  width: 90px;
+  height: 35px;
+  border-radius : 10px;
+  border: 0.5px solid rgb(116, 116, 116);
+}
+
+.navbar-toggler-icon {
+  color: black;
+}
+
