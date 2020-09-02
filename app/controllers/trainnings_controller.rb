@@ -1,8 +1,4 @@
 class TrainningsController < ApplicationController
-  def index
-    @trainnings = Trainning.all
-  end
-
   def new
     @trainning = Trainning.new
   end
@@ -18,9 +14,13 @@ class TrainningsController < ApplicationController
     end
   end
 
+  def index
+    @trainnings = Trainning.all
+  end
+
   private
 
   def trainnings_params
-    params.require(:trainng).permit(:duration, :address)
+    params.require(:trainng).permit(:address, :duration, :description, :category)
   end
 end
