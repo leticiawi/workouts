@@ -1,9 +1,12 @@
-<h4 class="my-4">Just some more information...</h4>
 
-<%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
-   <%= f.input :name %>
-   <%= f.input :address %>
-   <%#= f.input :phone %>
-   <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
+<div class="container">
+  <h4 class="my-4">Just some more information...</h4>
 
-<% end %>
+  <%= simple_form_for @profile, url: profiles_path, method: :post do |f| %>
+     <%= f.input :name %>
+     <%= f.input :address %>
+     <%= f.input :trainer, as: :boolean, checked_value: true, unchecked_value: false %>
+     <%= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
+
+  <% end %>
+</div>
