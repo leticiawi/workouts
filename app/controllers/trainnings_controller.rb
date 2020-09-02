@@ -22,7 +22,7 @@ end
     @trainning.category = Category.find(params[:trainning][:category])
 
     if @trainning.save
-      redirect_to @trainning
+      redirect_to trainer_show_path(@trainning)
     else
       render :new
     end
@@ -34,7 +34,8 @@ end
 
   def update
     @trainning = Trainning.find(params[:id])
-    @trainning.update(trainning_params)
+    @trainning.category = Category.find(params[:trainning][:category])
+    @trainning.update(trainnings_params)
     if @trainning.save
       redirect_to trainer_show_path(@trainning)
     else
@@ -53,7 +54,7 @@ end
   end
 
   def trainer_show
-    @trainning = Trainning.find(params[:format])
+    @trainning = Trainning.find(params[:id])
   end
 
   private
