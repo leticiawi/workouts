@@ -1,10 +1,13 @@
-<h1>Form de Trainnings</h1>
+<h1>Create a new trainning</h1>
 
 <ul class="list-group">
-        <%= simple_form_for @trainning do |form| %>
-        <li class="list-group-item"><%= form.input :address %></li>
+        <%= simple_form_for @trainning do |f| %>
+        <li class="list-group-item"><%= f.input :address %></li>
+        <li class="list-group-item"><%= f.input :duration %></li>
+        <li class="list-group-item"><%= f.input :description %></li>
+        <li class="list-group-item"><%= f.input :category %></li>
 
 
-        <%= form.submit class: 'btn btn-info' %>
+        <%= f.submit class: 'btn btn-info' %>
         <% end %>
       </ul>
