@@ -1,1 +1,44 @@
-<h1>Congrats, you are onde step closer into changing your life</h1>
+<h1>Congrats, you are one step closer into changing your life</h1>
+
+<div class="banner" style='background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= @background %>);'>
+  <div class="container">
+    <h1><%= @title %></h1>
+  </div>
+</div>
+
+
+só mostrar os treinos dele mesmo
+<div class="container adjust-height">
+  <div class="row">
+    <% @trainnings.each do |trainning| %>
+    <div class="col-12 col-md-6 col-lg-4">
+      <% if trainning.photo.attached? %>
+      <div class="card-trip">
+        <img class="card-img-top" src='<%= cl_image_path trainning.photo.key %>' alt="Card image cap">
+      <% else %>
+        <img class="card-img-top" src="https://images.unsplash.com/photo-1591347887817-173e3d5c4891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2582&q=80" alt="Card image cap">
+      <% end %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= trainning.category %></h2>
+            <!-- <p> Category: <%= trainning.category %></p> -->
+            <!-- <p id="amount">Amount: <%#= humanized_money_with_symbol(trainning.price/100) %></p> -->
+            <div class="border p-1">
+
+
+            </div>
+              <div>
+                <%#= link_to "Buy now", trainnings_path, class: "btn btn-flat" %>
+                   <div class="btn view-btn"><%= link_to "View!", trainning_path(trainning) %></div>
+                 <% if trainning.user == current_user %>
+                   <div class="btn remove-btn"><%= link_to "Remove trainning", trainning_path(trainning), method: :delete, data: { confirm: "Are you sure?" } %></div>
+                <% end %>
+              </div>
+          </div>
+            <%#= link_to "View!", product_path(Product.first), class: "btn btn-gradient" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
