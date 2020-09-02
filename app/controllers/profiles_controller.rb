@@ -16,6 +16,19 @@ class ProfilesController < ApplicationController
     redirect_to root_path unless user_signed_in?
   end
 
+  def edit
+    @profile = current_user
+  end
+
+  def update
+    @profile = current_user
+    if @profile.update(user_params)
+      redirect_to profile_path(current_user)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def user_params

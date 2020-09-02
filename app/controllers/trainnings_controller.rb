@@ -3,10 +3,6 @@ class TrainningsController < ApplicationController
     @trainnings = Trainning.all
   end
 
-  def show
-    @trainning = Trainning.find(params[:id])
-  end
-
   def new
     @trainning = Trainning.new
   end
@@ -20,6 +16,10 @@ class TrainningsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @trainning = Trainning.find(params[:id])
   end
 
   private

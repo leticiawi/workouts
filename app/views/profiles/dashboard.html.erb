@@ -4,5 +4,5 @@
 <% if current_user.trainer? %>
 <%# render xxx todos os treinos %>
 <% else %>
-<%= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+<%= link_to "Register as personal trainer!", update_path, class: "btn btn-primary" %>
 <% end %>
