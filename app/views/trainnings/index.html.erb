@@ -2,4 +2,29 @@
   <h2 id="congrats">Congrats, you are one step closer into changing your life</h2>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class=" col-6">
+      <div class="trainning-card">
+        <%= image_tag "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", alt: "Le Wagon", height: 100%>
+        <p>Abdominals</p>
+      </div>
+    </div>
+    <div class=" col-6">
+      <div class="trainning-card">
+        <%= image_tag "https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", alt: "Le Wagon", height: 100%>
+        <p>Running</p>
+      </div>
+    </div>
+    <div class=" col-6">
+      <div class="trainning-card">
+        <%= image_tag "https://images.unsplash.com/photo-1583454122781-8cf8f5af9d2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", alt: "Le Wagon", height: 100%>
+        <p>Strenght</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to "view details", trainning_path(trainning), class: "btn btn-primary" %>
+
 
