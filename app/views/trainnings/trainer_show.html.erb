@@ -4,7 +4,7 @@
     <div class="col-12">
       <div class="card" style="width: 15rem;">
         <div class="d-flex justify-content-center p-1 border-bottom ">
-          <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+          <img class="avatar-large" alt="avatar-large" src="https://avatars3.githubusercontent.com/u/67508360?s=460&v=4" />
         </div>
          <div class="d-flex text-center">
           <div class="card-body">
@@ -13,12 +13,11 @@
             <p class="card-title"><%= @trainning.duration %></p>
             <p class="card-title">" <%= @trainning.description %> "</p>
             <%= link_to "delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" } %>
-            <%= link_to "view all", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
+            <%= link_to "view all", trainer_index_path, class: "btn btn-primary btn-sm" %>
             <%= link_to "edit", edit_trainning_path(@trainning), class: "btn btn-warning btn-sm" %>
           </div>
-
         </div>
-
+         <%= link_to "------add new tranning------", new_trainning_path %>
       </div>
     </div>
 </div>
