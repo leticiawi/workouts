@@ -12,6 +12,10 @@
 @import "components/index";
 @import "pages/index";
 
-
 /* In the "external libraries" section */
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+
+.adjust-height {
+  min-height: 65vh;
+}
+
