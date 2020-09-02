@@ -8,11 +8,17 @@
         <%= f.submit %>
         <% end %>
       </form>
+    <div class="container">
       <div class="row">
-        <div class="column-12"></div>
-          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" height="200px" >
-          <p> Aqui vai uma descriçao do aluno....</p>
+        <div class="user-infos"></div>
+          <%= image_tag "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"%>
+          <ul class="list-group list-group-flush">
+            <li class="list-item">See all trainnings</li>
+            <li class="list-item">Edit profile</li>
+            <li class="list-item">Add Review</li>
+          </ul>
           <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
 <%# raise %>
@@ -20,4 +26,3 @@
 <%= render 'shared/trainerboard' %>
 <% end  %>
 <%= link_to "index", trainnings_path %>
-
