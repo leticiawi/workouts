@@ -1,42 +1,37 @@
- <div class="container">
-  <div class="container border-bottom">
-  <h3>Search by Category:</h3>
+
+<div class="container" id="select">
+  <h3 id="trainnings">Search by Category:</h3>
+</div>
+
+<div class="container" id="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+    Running
+  </div> 
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+    Strenght
   </div>
 
-  <div class="row">
-    <div class=" col-6">
-      <div class="trainning-card">
-        <%= image_tag "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", alt: "Le Wagon", height: 100%>
-        <p>Hit Cardio</p>
-      </div>
-    </div>
-    <div class=" col-6">
-      <div class="trainning-card">
-        <%= image_tag "https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80", alt: "Le Wagon", height: 100%>
-        <p>Running</p>
-      </div>
-    </div>
-    <div class=" col-6">
-      <div class="trainning-card">
-        <%= image_tag "https://images.unsplash.com/photo-1583454122781-8cf8f5af9d2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80", alt: "Le Wagon", height: 100%>
-        <p>Strenght</p>
-      </div>
-    </div>
-    <div class=" col-6">
-      <div class="trainning-card">
-        <%= image_tag "https://images.unsplash.com/photo-1560631820-5bc34db86fe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80", alt: "Le Wagon", height: 100%>
-        <p>Personal Fight</p>
-      </div>
-    </div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1583187856683-dddad0e87f79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+    Personal Fight
+
   </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1480264104733-84fb0b925be3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
+    Hit cardio
+  </div>
+
 </div>
+
 <%#= link_to "view details", trainning_path(trainning), class: "btn btn-primary" %>
 
-<p>.........................................................................................................</p>
+
+<p>..............................................................................................</p>
 
   <div class="container border-bottom">
   <h3>See all trainnings available in your zone:</h3>
   </div>
+
 
 <div class="container mx-5 py-1">
   <div class="row">
