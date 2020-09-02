@@ -24,6 +24,10 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from 'plugins/init_mapbox';
+
+initMapbox();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
