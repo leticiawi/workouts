@@ -15,9 +15,9 @@
           <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
       </div>
     </div>
-<%# raise %>
+<%= link_to "index", trainnings_path %>
 <%else %>
 <%= render 'shared/trainerboard' %>
 <% end  %>
-<%= link_to "index", trainnings_path %>
+
 

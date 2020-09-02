@@ -1,4 +1,4 @@
-<h1>Show de trainning</h1>
+<h1>Show de Trainers!</h1>
 
 <div class="row">
     <div class="col-12">
@@ -12,8 +12,9 @@
             <p class="card-title"><%= @trainning.category.name %></p>
             <p class="card-title"><%= @trainning.duration %></p>
             <p class="card-title">" <%= @trainning.description %> "</p>
-            <%= link_to "Book Now", trainning_path(@trainning), class: "btn btn-danger btn-sm" %>
+            <%= link_to "delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" } %>
             <%= link_to "view all", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
+            <%= link_to "edit", edit_trainning_path(@trainning), class: "btn btn-warning btn-sm" %>
           </div>
 
         </div>

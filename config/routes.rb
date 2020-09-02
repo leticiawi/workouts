@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "dashboard", to: "profiles#dashboard"
   get "trainer_board", to: "profiles#dashboard"
   resources :trainnings
+  get "trainer_index", to: "trainnings#trainer_index"
+  get "trainer_show", to: "trainnings#trainer_show"
 
 
   root to: 'pages#home'
