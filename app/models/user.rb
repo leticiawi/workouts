@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :sold_trainnings, class_name: "Trainning", dependent: :destroy
   validates :address, :name, presence: true, on: :update
   # phone
+
+  # geocoder info
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
