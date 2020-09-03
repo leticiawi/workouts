@@ -17,7 +17,7 @@
             <div class="container">
               <%= link_to "Book Now", trainning_path(@trainning), class: "btn btn-danger btn-sm" %>
               <%= link_to "View All", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
-              <%= link_to "Trainers Profile ", trainnings_path(@trainning), class: "btn btn-success btn-sm btn-block" %>
+              <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-success btn-sm btn-block" %>
             </div>
           </div>
         </div>
