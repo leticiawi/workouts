@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_many :trainnings, through: :orders
   has_many :sold_trainnings, class_name: "Trainning", dependent: :destroy
   validates :address, :name, presence: true, on: :update
+  has_one_attached :photo
   # phone
 end

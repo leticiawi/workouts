@@ -6,7 +6,7 @@
 <div class="container" id="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1540539234-c14a20fb7c7b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
     Running
-  </div> 
+  </div>
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80)">
     Strenght
@@ -33,15 +33,14 @@
   </div>
 
 
-<div class="container mx-5 py-1">
+<div class="container">
   <div class="row">
     <% @trainnings.each do |trainning| %>
-      <div class="col-12">
-        <div class="card" style="width: 15rem;">
+      <div class="col-6">
+        <div class="card-trainning">
           <div class="d-flex justify-content-center p-1 border-bottom ">
             <img class="avatar-large" alt="avatar-large" src="https://avatars3.githubusercontent.com/u/67508360?s=460&v=4" />
           </div>
-           <div class="d-flex text-center p-1">
             <div class="card-body">
               <p class="card-title"><%= trainning.user.name %></p>
               <p class="card-title"><%= trainning.category.name %></p>
@@ -49,9 +48,6 @@
               <!--<p class="card-title">" <%#= trainning.description %> "</p>-->
               <%= link_to "view deatils", trainning_path(trainning), class: "btn btn-primary btn-sm" %>
             </div>
-
-          </div>
-
         </div>
       </div>
     <% end %>
