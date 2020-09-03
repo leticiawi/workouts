@@ -1,6 +1,18 @@
-<ul class="list-group">
-  <li class="list-group-item"><%= @profile.bio %></li>
-  <li class="list-group-item"><%= @profile.age  %></li>
-  <li class="list-group-item"><%= @profile.achievments %></li>
-  <li class="list-group-item"><%= @profile.certifications  %></li>
-</ul>
+
+
+
+<div class="container" id="select">
+  <div class="container">
+    <%= cl_image_tag @profile.photo.key, height:300, width:355, crop: :fill %>
+      <div class="container">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+      <ul class="list-group">
+        <li class="list-group-item"><%= current_user.name %></li>
+        <li class="list-group-item">Bio:<%= @profile.bio %></li>
+        <li class="list-group-item">Age: <%= @profile.age  %></li>
+        <li class="list-group-item">Achievments:<%= @profile.achievments %></li>
+        <li class="list-group-item">Certifications:<%= @profile.certifications  %></li>
+      </ul>
+  </div>
+</div>
