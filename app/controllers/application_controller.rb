@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def custom_param_devise
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name address trainer])
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[name address trainer photo])
   end
 end

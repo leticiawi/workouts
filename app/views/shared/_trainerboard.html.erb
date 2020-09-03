@@ -9,9 +9,15 @@
    <div class="container adjust-height">
     <div class="container">
       <div class="user-infos"></div>
+      <%# if current_user.photo.attached? %>
       <div class="image">
-        <%= image_tag "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"%>
+        <%#= image_tag current_user.photo.key%>
       </div>
+      <%# else %>
+      <div class="image">
+        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
+      </div>
+       <%# end %>
       <div class="profile-usertitle">
 				<div class="profile-usertitle-name">
 					<%= current_user.name.capitalize! %>
@@ -21,7 +27,7 @@
           <%= link_to "All trainnings", trainnings_path, class: "list-item"%>
           <%= link_to "My trainnings", trainer_index_path, class: "list-item"%>
           <%= link_to "Add trainning", new_trainning_path, class: "list-item"%>
-          <li class="list-item">Add Review</li>
+          <%= link_to "Profile", new_profile_path, class: "list-item"%>
         </ul>
         <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
     </div>

@@ -1,10 +1,29 @@
+<div class="container" id="select">
 
+ <h1>Create profile</h1>
+ <%= simple_form_for @profile, url: new_profile_path do |f| %>
+     <%= f.input :speciality %>
+     <%= f.input :bio %>
+     <%= f.input :age %>
+     <%= f.input :certification %>
+     <%= f.input :achievements %>
+     <%= f.submit 'Submit Profile', class: 'btn btn-primary btn-block' %>
+  <% end %>
+</div>
 
-  <%#= simple_form_for @user, url: profiles_path, method: :post do |f| %>
-     <%#= f.input :name %>
-     <%#= f.input :address %>
-     <%#= f.input :trainer, as: :boolean %>
-     <%#= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
+<div class="container" id="select">
+  <h3>Design you trainning session:</h3>
 
-  <%# end %>
+  <ul class="list-group">
+    <%= simple_form_for @profile do |f| %>
+    <li class="list-group-item"><%= f.input :speciality %></li>
+    <li class="list-group-item"><%= f.input :bio %></li>
+    <li class="list-group-item"><%= f.input :age %></li>
+    <li class="list-group-item"><%= f.input :certification %></li>
+    <li class="list-group-item"><%= f.input :achievements %></li>
+    <li class="list-group-item"><%= f.input :photo, as: :file %></li>
+    <%= form.submit 'Submit Profile', class: 'btn btn-info btn-block' %>
+    <% end %>
+  </ul>
 
+</div>
