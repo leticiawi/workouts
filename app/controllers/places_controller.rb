@@ -1,6 +1,27 @@
 class PlacesController < ApplicationController
+  # def index
+  #   @user = User.all
+
+  #   # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+  #   @markers = @flats.geocoded.map do |flat|
+  #     {
+  #       lat: flat.latitude,
+  #       lng: flat.longitude
+  #       # infoWindow: render_to_string(partial: "info_window", locals: { user: user})
+  #       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS'}
+  #     }
+  #   end
+  # end
+  # def index
+  #   @places = Place.order('created_at DESC')
+  # end
+
   def index
-    @places = Place.order('created_at DESC')
+    if params[:search].present?
+      @locations = Place.near(params[:search], 50, :order => :distance)
+    else
+      @locations = Place.all
+    end
   end
 
   def show
@@ -29,19 +50,7 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
   end
 
-  # def index
-  #   @user = User.all
 
-  #   # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-  #   @markers = @flats.geocoded.map do |flat|
-  #     {
-  #       lat: flat.latitude,
-  #       lng: flat.longitude
-  #       # infoWindow: render_to_string(partial: "info_window", locals: { user: user})
-  #       # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS'}
-  #     }
-  #   end
-  # end
 
   private
 

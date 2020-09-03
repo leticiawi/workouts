@@ -9,6 +9,15 @@
     </ul>
   </div>
 </div>
+
+<!-- Isso seria no dashboard? -->
+<%= form_tag locations_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search Near", :name => nil %>
+  </p>
+<% end %>
+
 <div id='map'>
   <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lvdmFubmFiZXR0aSIsImEiOiJjazk1MXhnbmowNG1xM2ZwOG4wcnFldWExIn0.DMOT-sukXTZm5uwW9pk-eQ';
