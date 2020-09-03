@@ -14,6 +14,7 @@
       <div class="container">
         <div class="user-infos"></div>
         <div class="image">
+        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
           <%#= cl_image_tag current_user.photo.key %>
         </div>
         <div class="profile-usertitle">
@@ -33,5 +34,7 @@
 <%else %>
 <%= render 'shared/trainerboard' %>
 <% end  %>
+
+<%= link_to "categories", categories_path %>
 
 

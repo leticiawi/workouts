@@ -1,10 +1,18 @@
 
+<div class="container" id="select">
+  <h3>Design you trainning session:</h3>
 
-  <%#= simple_form_for @user, url: profiles_path, method: :post do |f| %>
-     <%#= f.input :name %>
-     <%#= f.input :address %>
-     <%#= f.input :trainer, as: :boolean %>
-     <%#= f.submit 'Complete Your Registration', class: 'btn btn-primary btn-block' %>
+  <ul class="list-group">
+    <%= simple_form_for @profile do |f| %>
+    <%= f.input :user_id, as: :hidden %>
+    <li class="list-group-item"><%= f.input :speciality %></li>
+    <li class="list-group-item"><%= f.input :bio %></li>
+    <li class="list-group-item"><%= f.input :age %></li>
+    <li class="list-group-item"><%= f.input :certifications %></li>
+    <li class="list-group-item"><%= f.input :achievments %></li>
+    <li class="list-group-item"><%= f.input :photo, as: :file %></li>
+    <%= f.submit 'Submit Profile', class: 'btn btn-info btn-block' %>
+    <% end %>
+  </ul>
 
-  <%# end %>
-
+</div>
