@@ -12,18 +12,21 @@
         <div class="image">
           <%= image_tag "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"%>
         </div>
-        <div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						<%= current_user.name.capitalize! %>
-					</div>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+                <%= link_to :Trainnings, trainnings_path, class: "list-item"%>
+            </div>
+            <div class="col-6">
+                <li class="list-item">Edit profile</li>
+            </div>
+            <div class="col-6">
+                <li class="list-item">Add Review</li>
+            </div>
+          </div>
         </div>
-          <ul class="list-group list-group-flush">
-            <%= link_to :Trainnings, trainnings_path, class: "list-item"%>
-            <li class="list-item">Edit profile</li>
-            <li class="list-item">Add Review</li>
-          </ul>
           <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
-        </div>
+
 
       </div>
     </div>
