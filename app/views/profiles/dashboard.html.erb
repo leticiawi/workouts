@@ -12,26 +12,25 @@
       <% end %>
     </form>
     <div class="container adjust-height">
-
       <div class="container">
-        <div class="user-infos"></div>
         <div class="image">
         <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
           <%#= cl_image_tag current_user.photo.key %>
         </div>
         <div class="container">
-          <div class="row">
-            <div class="col-6">
-                <%= link_to :Trainnings, trainnings_path, class: "list-item"%>
-            </div>
-            <div class="col-6">
-                <li class="list-item">Edit profile</li>
-            </div>
-            <div class="col-6">
-                <li class="list-item">Add Review</li>
+          <div class="d-flex justify-content-center">
+            <div class="row">
+              <div class="col-6">
+                  <%= link_to :Trainnings, trainnings_path, class: "btn-profile"%>
+              </div>
+              <div class="col-6">
+                  <li class="btn-profile">Edit profile</li>
+              </div>
+              <div class="col-6">
+                  <li class="btn-profile">Add Review</li>
+              </div>
             </div>
           </div>
-        </div>
           <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
       </div>
     </div>

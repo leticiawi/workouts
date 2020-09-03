@@ -54,9 +54,6 @@
 
 }
 
-
-
-
 #username {
   color: rgb(51, 51, 51);
   text-align: center;
@@ -140,9 +137,33 @@ margin-bottom: 1px;
 
 #select {
   margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 #text-big {
   text-align: center;
 }
 
+.profile-img {
+  width: 302px;
+  height: 300px;
+  margin-left: 25px;
+  border-radius: 5px;
+}
+
+.fa-star {
+  font-size: 20px;
+}
+
+.fa-star-half-alt {
+  font-size: 20px;
+}
+
+.list-group-item {
+  background: rgba(235, 234, 234, 0.301);
+}
+ .stars {
+   margin-top: 5px;
+   width: 150px;
+   height: 30px;
+ }
