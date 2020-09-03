@@ -60,6 +60,6 @@ end
   private
 
   def trainnings_params
-    params.require(:trainning).permit(:duration, :address, :description)
+    params.require(:trainning).permit(:duration, :address, :description, :photo)
   end
 end

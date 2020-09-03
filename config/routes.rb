@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # geocoder 11-13
   resources :places, except: [:update, :edit, :destroy]
-  root 'places#index'
+  # root 'places#index'
 
 
   root to: 'pages#home'

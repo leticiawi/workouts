@@ -1,30 +1,31 @@
 
-<div class="container">
-  <h3>Hello, <%= current_user.name %> !</h3>
-  <h5>--Ready for todays challeges?--</h5>
-  <div class="row">
-    <div class="col-12">
-      <div class="list-group" id="list-tab" role="tablist">
-        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">My trainnings</a>
-        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Create new trainning</a>
-        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Schedule</a>
-        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">My profile</a>
-      </div>
-    </div>
-    <div class="col-8">
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">...</div>
-        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">...</div>
-        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...</div>
-      </div>
+<div class="container" id="select">
+  <div id="text-big">
+    <div class="container text-center border-bottom">
+      <h3>Hello, <%= current_user.name %> !</h3>
+      <h5>--Ready for challenges?--</h5>
     </div>
   </div>
-
-    <%= link_to "create new |", new_trainning_path %>
-    <%= link_to "my trainnings |", trainer_index_path %>
-    <%= link_to "all trainnings |", trainnings_path %>
-
+   <div class="container adjust-height">
+    <div class="container">
+      <div class="user-infos"></div>
+      <div class="image">
+        <%= image_tag "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"%>
+      </div>
+      <div class="profile-usertitle">
+				<div class="profile-usertitle-name">
+					<%= current_user.name.capitalize! %>
+				</div>
+      </div>
+        <ul class="list-group list-group-flush">
+          <%= link_to "All trainnings", trainnings_path, class: "list-item"%>
+          <%= link_to "My trainnings", trainer_index_path, class: "list-item"%>
+          <%= link_to "Add trainning", new_trainning_path, class: "list-item"%>
+          <li class="list-item">Add Review</li>
+        </ul>
+        <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
 
 

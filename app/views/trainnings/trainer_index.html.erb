@@ -1,23 +1,30 @@
-<h3>Trainers index</h3>
-<div class="row">
-  <% @trainnings.each do |trainning| %>
-    <div class="col-12">
-      <div class="card" style="width: 15rem;">
-        <div class="d-flex justify-content-center p-1 border-bottom ">
-          <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
-        </div>
-         <div class="d-flex text-center p-1">
-          <div class="card-body">
-            <p class="card-title"><%= trainning.user.name %></p>
-            <p class="card-title"><%= trainning.category.name %></p>
-            <p class="card-title"><%= trainning.duration %></p>
-            <p class="card-title">" <%= trainning.description %> "</p>
-            <%= link_to "view deatils", trainer_show_path(trainning), class: "btn btn-primary btn-sm" %>
+<div class="container" id="select">
+  <div class="container border-bottom">
+    <h3><%= current_user.name %>'s trainnings:</h3>
+  </div>
+
+
+    <div class="row">
+      <% @trainnings.each do |trainning| %>
+        <div class="col-6">
+          <div class="card-trainning">
+            <div class="d-flex justify-content-center p-1 border-bottom ">
+              <img class="avatar-large" alt="avatar-large" src='<%= cl_image_path @trainning.photo.key %>'/>
+            </div>
+             <div class="d-flex text-center p-1">
+              <div class="card-body">
+                <p class="card-title"><%= trainning.user.name %></p>
+                <p class="card-title"><%= trainning.category.name %></p>
+                <p class="card-title"><%= trainning.duration %></p>
+                <%= link_to "view deatils", trainer_show_path(trainning), class: "btn btn-info btn-sm" %>
+              </div>
+            </div>
           </div>
-
         </div>
-
-      </div>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
+
+
+
+
