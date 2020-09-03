@@ -1,0 +1,43 @@
+<h3>Where do you want to train today?</h3>
+
+
+<%= form_tag places_path, method: :get do %>
+<!-- nao sei se posso substituir query por address -->
+  <%= text_field_tag :address,
+    params[:address],
+    class: "form-control",
+    placeholder: "Find trainners near"
+  %>
+  <!-- ou find my location -->
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+<!-- <ul class="list-group adjust-height" id="select">
+  <%#= simple_form_for @place do |form| %>
+  <li class="list-group-item"><%#= form.input :address %></li>
+  <%#= form.submit class: 'btn btn-info btn-block' %>
+  <%# end %> </ul> -->
+  <!-- button save and search(?) address -->
+
+<!-- <form class="form-inline">
+  <%#= simple_form_for :search, url: trainnings_path do |f|%>
+  <%#= f.input :"", class: "input-form" %>
+  <%#= f.submit :search, class: "submit"%>
+  <#% end %>
+</form> -->
+
+<!-- SIGN IN/LOG IN
+- Rota para new place se for aluno
+NEW PLACE
+Inserir uma busca em new place
+Salvar endereco e exibir em dashboard
+      - redirecionar para dashboard
+DASHBOARD
+- exibir endereco definido em etapa anterior
+- botao trainnings leva a categorias
+      - cada categoria eh um botao que pega o endereco do dashboard e compara com aqueles inseridos pelos trainers, filtrando e mostrando os proximos
+NEAR
+- exibe trainers em endereco aproximado ao do dashboard
+- pagina estilo airbnb: - mapa com pins indicando onde o user esta e onde estao os treiners perto dele
+                        - exibe cards dos trainers perto dele -->

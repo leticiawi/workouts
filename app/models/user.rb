@@ -10,5 +10,7 @@ class User < ApplicationRecord
   validates :address, :name, presence: true, on: :update
   has_one_attached :photo
   has_one :profile
+  has_many :places
+  # opcao de cadastrar outro address
   # phone
 end

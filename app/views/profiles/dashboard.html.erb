@@ -3,14 +3,15 @@
 <div class="container" id="select">
 
   <div class="container text-center border-bottom">
-    <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
+    <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3>
+    <!-- Ja aparece o endereco informado na etapa anterior. Opcao para trocar de endereco ou inserir novo <h6>Where do you want to train today?</h6> -->
   </div>
-    <form class="form-inline">
-      <%= simple_form_for :search, url: trainnings_path do |f|%>
-      <%= f.input :"", class: "input-form" %>
-      <%= f.submit :search, class: "submit"%>
-      <% end %>
-    </form>
+<!--     <form class="form-inline">
+      <%#= simple_form_for :search, url: trainnings_path do |f|%>
+      <%#= f.input :"", class: "input-form" %>
+      <%#= f.submit :search, class: "submit"%>
+      <#% end %>
+    </form> -->
     <div class="container adjust-height">
 
       <div class="container">
