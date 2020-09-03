@@ -14,6 +14,12 @@ class ProfilesController < ApplicationController
 
   def dashboard
     redirect_to root_path unless user_signed_in?
+    @markers = User.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   private
