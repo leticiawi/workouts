@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address)
+    params.require(:user).permit(:name, :address, :photo)
     # phone
   end
 end

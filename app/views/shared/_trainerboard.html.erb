@@ -1,37 +1,31 @@
 
 <div class="container" id="select">
- <div id="text-big">
-  <h3>Hello, <%= current_user.name %> !</h3>
-
-  <h5>--Ready for  challeges?--</h5>
- </div>
-
-     <div class="container adjust-height">
-      <div class="container">
-        <div class="user-infos"></div>
-        <div class="image">
-          <%= image_tag "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"%>
-        </div>
-        <div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						<%= current_user.name.capitalize! %>
-					</div>
-        </div>
-          <ul class="list-group list-group-flush">
-            <%= link_to :Trainnings, trainnings_path, class: "list-item"%>
-            <li class="list-item">Edit profile</li>
-            <li class="list-item">Add Review</li>
-          </ul>
-          <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
-        </div>
-
-      </div>
+  <div id="text-big">
+    <div class="container text-center border-bottom">
+      <h3>Hello, <%= current_user.name %> !</h3>
+      <h5>--Ready for challenges?--</h5>
     </div>
-
-    <%= link_to "create new |", new_trainning_path %>
-    <%= link_to "my trainnings |", trainer_index_path %>
-    <%= link_to "all trainnings |", trainnings_path %>
-
+  </div>
+   <div class="container adjust-height">
+    <div class="container">
+      <div class="user-infos"></div>
+      <div class="image">
+        <%= image_tag "https://images.unsplash.com/photo-1554244933-d876deb6b2ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"%>
+      </div>
+      <div class="profile-usertitle">
+				<div class="profile-usertitle-name">
+					<%= current_user.name.capitalize! %>
+				</div>
+      </div>
+        <ul class="list-group list-group-flush">
+          <%= link_to "All trainnings", trainnings_path, class: "list-item"%>
+          <%= link_to "My trainnings", trainer_index_path, class: "list-item"%>
+          <%= link_to "Add trainning", new_trainning_path, class: "list-item"%>
+          <li class="list-item">Add Review</li>
+        </ul>
+        <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+    </div>
+  </div>
 </div>
 
 
