@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :categories
-  resources :profiles, only: [:new, :create, :update, :destroy]
+  resources :profiles, only: [:new, :create, :update, :destroy, :show]
 
   get "dashboard", to: "profiles#dashboard"
   get "trainer_board", to: "profiles#dashboard"
