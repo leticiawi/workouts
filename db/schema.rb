@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_09_03_111435) do
   end
 
   create_table "trainnings", force: :cascade do |t|
-    t.string "location"
+    t.string "description"
     t.string "address"
     t.string "duration"
     t.bigint "category_id", null: false

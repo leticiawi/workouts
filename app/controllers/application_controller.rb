@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :custom_param_devise, if: :devise_controller?
 
   def dispatch_user
-
     return unless current_user && request.get?
 
     path = new_profile_path unless current_user.valid?
