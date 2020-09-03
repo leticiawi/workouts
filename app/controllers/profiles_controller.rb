@@ -1,14 +1,27 @@
 class ProfilesController < ApplicationController
   def new
-    @profile = User.new
+    @profile = Profile.new(user_id: current_user.id)
   end
 
   def create
-    @profile = current_user
-    if @profile.update(user_params)
+
+    if Profile.create(user_params)
       redirect_to dashboard_path
     else
       render :new
+    end
+  end
+
+  def edit
+    @profile = Profile.find(params[:id])
+  end
+
+  def update
+
+    if @profile.update(profile_params)
+      redirect_to dashboard_path
+    else
+      render :edit
     end
   end
 
@@ -19,7 +32,7 @@ class ProfilesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address)
+    params.require(:profile).permit(:name, :address, :photo, :age, :speciality, :bio, :certifications, :achievments, :user_id)
     # phone
   end
 end
