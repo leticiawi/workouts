@@ -1,6 +1,7 @@
 
 <% if current_user.trainer == false %>
 <div class="container" id="select">
+
   <div class="container text-center border-bottom">
     <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
   </div>
@@ -11,22 +12,26 @@
       <% end %>
     </form>
     <div class="container adjust-height">
+
       <div class="container">
         <div class="user-infos"></div>
         <div class="image">
         <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
           <%#= cl_image_tag current_user.photo.key %>
         </div>
-        <div class="profile-usertitle">
-					<div class="profile-usertitle-name">
-						<%= current_user.name.capitalize! %>
-					</div>
+        <div class="container">
+          <div class="row">
+            <div class="col-6">
+                <%= link_to :Trainnings, trainnings_path, class: "list-item"%>
+            </div>
+            <div class="col-6">
+                <li class="list-item">Edit profile</li>
+            </div>
+            <div class="col-6">
+                <li class="list-item">Add Review</li>
+            </div>
+          </div>
         </div>
-          <ul class="list-group list-group-flush">
-            <%= link_to :Trainnings, trainnings_path, class: "list-item"%>
-            <li class="list-item">Edit profile</li>
-            <li class="list-item">Add Review</li>
-          </ul>
           <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
       </div>
     </div>

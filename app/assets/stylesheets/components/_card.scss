@@ -44,6 +44,7 @@
 
 .image img {
   margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -54,20 +55,10 @@
 }
 
 
-.profile-usertitle {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 25px;
-  color: #5a5a5a;
-  font-weight: 600;
-  margin-bottom: 7px;
-  text-shadow: 1px 1px 10px rgba(128, 128, 128, 0.363);
-  letter-spacing: 2px;
-}
+
 
 #username {
   color: rgb(51, 51, 51);
-  text-shadow: 1px 1px 10px rgba(128, 128, 128, 0.363);
   text-align: center;
 }
 
@@ -154,3 +145,4 @@ margin-bottom: 1px;
 #text-big {
   text-align: center;
 }
+

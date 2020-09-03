@@ -1,4 +1,4 @@
-<ul class="list-group">
+<ul class="list-group adjust-height" id="select">
   <%= simple_form_for @trainning do |form| %>
   <li class="list-group-item"><%= form.input :category, collection: Category.all %></li>
   <li class="list-group-item"><%= form.input :description %></li>
