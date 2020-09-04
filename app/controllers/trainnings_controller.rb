@@ -3,7 +3,7 @@ class TrainningsController < ApplicationController
     @trainnings = Trainning.geocoded
     if params[:category_id]
       @trainnings = @trainnings.where(category_id: params[:category_id])
-    elsif params[:search][:address]
+    elsif params[:search]
       @trainnings = @trainnings.near(params[:search][:address], 15)
 
     end
