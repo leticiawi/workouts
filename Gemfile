@@ -30,6 +30,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
+gem 'geocoder'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
