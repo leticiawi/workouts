@@ -1,3 +1,4 @@
+
 puts "Destroying all users"
 User.destroy_all
 Category.destroy_all
