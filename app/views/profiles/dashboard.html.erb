@@ -3,12 +3,12 @@
     <div class="container text-center border-bottom">
       <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
     </div>
-    <form class="form-inline">
-      <%= simple_form_for :search, url: trainnings_path do |f|%>
-      <%= f.input :"", class: "input-form" %>
+
+    <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
+      <%= f.input :address, class: "input-form" %>
       <%= f.submit :search, class: "submit"%>
-      <% end %>
-    </form>
+    <% end %>
+
     <div class="container adjust-height">
       <div class="container">
         <div class="image">
