@@ -7,7 +7,7 @@
     <%= simple_form_for @trainning do |form| %>
     <li class="list-group-item"><%= form.input :category, collection: Category.all %></li>
 
-    <li class="list-group-item"><%= form.input :description %></li>
+    <%#<li class="list-group-item"><%= form.input :description </li>%>
     <li class="list-group-item"><%= form.input :duration %></li>
     <li class="list-group-item"><%= form.input :address %></li>
     <li class="list-group-item"><%= form.input :photo, as: :file %></li>

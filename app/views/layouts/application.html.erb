@@ -17,6 +17,22 @@
 
     <%= yield %>
   </body>
+  <div class="footer fixed-bottom">
+    <div class="footer-links">
+      <a href="#"><i class="fas fa-home"></i></a>
+      <a href="#"><i class="fas fa-dumbbell"></i></a>
+      <%= link_to root_path, class: "logo-home" do %>
+      <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png" %>
+      <% end %>
+      <a href="#"><i class="far fa-comments"></i></a>
+
+      <%= button_to destroy_user_session_path, method: :delete, class: "logout-icon" do %>
+         <i class="fas fa-sign-out-alt"></i>
+      <% end %>
+
+    </div>
+  </div>
+
 
 
 </html>
