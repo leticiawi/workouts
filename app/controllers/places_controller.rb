@@ -1,4 +1,18 @@
-class CategoriesController < ApplicationController
+class PlacesController < ApplicationController
+  before_action :set_flat, only: [:show, :edit, :update, :destroy]
+  def index
+    @places = Place.all
+
+    @markers = @places.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { flat: flat }),
+        image_url: helpers.asset_url('icon.png')
+      }
+    end
+  end
+
   def new
     @place = Place.new
   end
