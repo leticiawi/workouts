@@ -2,6 +2,7 @@
   margin-top: 15px;
 }
 
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -41,6 +42,7 @@
   top: -20px;
   width: 40px;
 }
+
 
 .image img {
   margin-top: 20px;
@@ -95,36 +97,46 @@ h4 {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-trainning{
-width:150px;
-height :200px;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
-padding: 1px;
-margin-bottom: 3px;
-
+.card-trainning {
+  margin-top: 15px;
+  width: 150px;
+  height: 223px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  margin-bottom: 3px;
 }
 
-.card-trainning-detail{
-width:250px;
-height :250px;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
-padding: 1px;
-margin-bottom: 3px;
-
+.p-1 {
+  padding: 0.75rem !important;
 }
 
-.card-body {
-text-align: center;
-text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-letter-spacing: 1px;
-margin-bottom: 1px;
-padding: 5px;
+.trainning-details {
+  width: 300px;
+  height: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  margin-top: 20px;
+  margin-left: 45px;
 }
 
 .card-title {
-font-size: 13px;
-margin-bottom: 1px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.267);
 }
+
+#title-size {
+  font-size: 15px;
+}
+
+.card-body {
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  margin-bottom: 1px;
+  padding: 11px;
+}
+
 
 #trainnings {
   text-align: center;
