@@ -1,6 +1,20 @@
 class TrainningsController < ApplicationController
   def index
-    @trainnings = Trainning.all
+    @trainnings = Trainning.geocoded
+    if params[:category_id]
+      @trainnings = @trainnings.where(category_id: params[:category_id])
+    elsif params[:search]
+      @trainnings = @trainnings.near(params[:search][:address], 15)
+
+    end
+    @markers = @trainnings.geocoded.map do |trainning|
+      {
+        lat: trainning.latitude,
+        lng: trainning.longitude,
+        infoWindow: render_to_string(partial: "cards", locals: { trainning: trainning })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS'}
+      }
+    end
   end
 
   def show
@@ -9,12 +23,12 @@ class TrainningsController < ApplicationController
 
   def new
     if current_user.trainer == true
-    @trainning = Trainning.new
-  else
-    flash[:notice] = 'Vc nao pode acessar essa pagina!'
-    redirect_to root_path
+      @trainning = Trainning.new
+    else
+      flash[:notice] = 'Vc nao pode acessar essa pagina!'
+      redirect_to root_path
+    end
   end
-end
 
   def create
     @trainning = Trainning.new(trainnings_params)
@@ -55,6 +69,10 @@ end
 
   def trainer_show
     @trainning = Trainning.find(params[:id])
+  end
+
+  def full_address
+    [pais, cidade, rua].compact.join(‘,’)
   end
 
   private

@@ -1,19 +1,21 @@
 <div class="card-trainning">
   <div class="d-flex justify-content-center p-1 border-bottom ">
-    <% if trainning.user.profile.photo.attached?  %>
-      <%= cl_image_tag trainning.user.profile.photo.key, class: "avatar avata-large" %>
-    <% else %>
+    <%# if trainning.user.profile.photo.attached?  %>
+      <%#= cl_image_tag trainning.user.profile.photo.key, class: "avatar avata-large" %>
+    <%# else %>
       <div class="image">
-        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
+        <%= image_tag "https://i.ibb.co/w7XyQQ5/WOxxx.png"%>
       </div>
-    <% end %>
+    <%# end %>
   </div>
     <div class="card-body">
-      <p class="card-title"><%= trainning.user.name %></p>
-      <p class="card-title"><%= trainning.category.name %></p>
-      <p class="card-title"><%= trainning.duration %></p>
+      <p class="card-title" id="title-size"><%= trainning.user.name.capitalize! %></p>
+      <p class="card-title" id="title-size"><%= trainning.category.name.capitalize! %></p>
+      <p class="card-title" id="title-size"><%= trainning.duration %></p>
         <!--<p class="card-title">" <%#= trainning.description %> "</p>-->
-      <%= link_to "view deatils", trainning_path(trainning), class: "btn btn-primary btn-sm" %>
     </div>
+        <div>
+          <%= link_to "view details", trainning_path(trainning), class: "btn details  " %>
+        </div>
   </div>
 

@@ -100,8 +100,45 @@ abbr[title="required"] {
 .logout-icon {
   border: 0px;
   font-size: 25px;
-  color: #5c636e;
+  color: #636870;
   background: rgba(128, 128, 128, 0);
   margin-left: 10px;
+}
 
+.details {
+  width: 149px;
+  height: 39px;
+  background: #5c636e;
+  color: white;
+  font-size: 15px;
+  margin-top: -44px;
+  margin-left: 0px;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-danger {
+  padding: 0.25rem 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgba(128, 128, 128, 0.466);
+}
+
+
+.btn-primary {
+  padding: 0.25rem 2rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  border-radius: 2px;
+  box-shadow: 0 1px 5px rgba(128, 128, 128, 0.466);
+}
+
+.btn-success {
+box-shadow: 0 1px 5px rgba(128, 128, 128, 0.466);
+color: white ;
+margin-top: 10px;
+padding: 0.25rem 0.5rem;
+font-size: 0.875rem;
+line-height: 1.5;
+border-radius: 2px;
 }

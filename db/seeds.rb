@@ -8,6 +8,8 @@ Category.create!(name:"Personal Fight")
 Category.create!(name:"Hit Cardio")
 
 puts "Creating a new user"
+
+
 User.create!(name: "Giovanna", email: "t@t.com", password: "123456", address: "Rua 123")
 giovana = User.last
 
@@ -16,7 +18,7 @@ Profile.create!(speciality:"personal", age:"40", bio:"Im from NYC", certificatio
 puts "criou profile"
 
 puts "Creating a new trainning"
-Trainning.create!(description:"xxx", duration:"15min", address:"jhdfwhjr", user: User.last, category: Category.first)
+# Trainning.create!(description:"xxx", duration:"15min", address:"Rua Hum, 123", user: User.last, category: Category.first)
 puts "Created new trainning"
 
 puts "Criou um user"

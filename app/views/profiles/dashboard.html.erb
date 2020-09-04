@@ -1,43 +1,41 @@
+<% if !current_user.trainer? %>
+  <div class="container" id="select">
+    <div class="container text-center border-bottom">
+      <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
+    </div>
 
-<% if current_user.trainer == false %>
-<div class="container" id="select">
-
-  <div class="container text-center border-bottom">
-    <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
-  </div>
-    <form class="form-inline">
-      <%= simple_form_for :search, url: trainnings_path do |f|%>
-      <%= f.input :"", class: "input-form" %>
+    <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
+      <%= f.input :address, class: "input-form" %>
       <%= f.submit :search, class: "submit"%>
-      <% end %>
-    </form>
+    <% end %>
+
     <div class="container adjust-height">
       <div class="container">
         <div class="image">
-        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
+          <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
           <%#= cl_image_tag current_user.photo.key %>
         </div>
         <div class="container">
           <div class="d-flex justify-content-center">
             <div class="row">
               <div class="col-6">
-                  <%#= link_to :Trainnings, trainnings_path, class: "btn-profile"%>
-                  <%= link_to :Trainnings, categories_path, class: "btn-profile"%>
+                <%#= link_to :Trainnings, trainnings_path, class: "btn-profile"%>
+                <%= link_to :Trainnings, categories_path, class: "btn-profile"%>
               </div>
               <div class="col-6">
-                  <li class="btn-profile">Edit profile</li>
+                <li class="btn-profile">Edit profile</li>
               </div>
               <div class="col-6">
-                  <li class="btn-profile">Add Review</li>
+                <li class="btn-profile">Add Review</li>
               </div>
             </div>
           </div>
-          <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+            <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
-</div>
 <%else %>
-<%= render 'shared/trainerboard', profile: @profile %>
+  <%= render 'shared/trainerboard', profile: @profile %>
 <% end  %>
 
 
