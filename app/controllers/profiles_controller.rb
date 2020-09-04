@@ -32,6 +32,7 @@ class ProfilesController < ApplicationController
 
   def dashboard
     redirect_to root_path unless user_signed_in?
+    @profile = Profile.find_by(user: current_user)
   end
 
   private
