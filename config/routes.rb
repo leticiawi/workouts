@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :trainnings
   get "trainer_index", to: "trainnings#trainer_index"
   get "trainer_show/:id", to: "trainnings#trainer_show", as: "trainer_show"
+  get "checkout", to: "pages#checkout"
 
 
   root to: 'pages#home'

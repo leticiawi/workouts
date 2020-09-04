@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user = current_user
-    if @profile.save
+    if @profile.save!
       redirect_to @profile
     else
       render :new
@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
 
   def dashboard
     redirect_to root_path unless user_signed_in?
-    @profile = Profile.find_by(user: current_user)
+    @profile = current_user.profile
   end
 
   private

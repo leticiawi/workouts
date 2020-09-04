@@ -9,6 +9,11 @@ Category.create!(name:"Hit Cardio")
 
 puts "Creating a new user"
 User.create!(name: "Giovanna", email: "t@t.com", password: "123456", address: "Rua 123")
+giovana = User.last
+
+puts "Creating a profile"
+Profile.create!(speciality:"personal", age:"40", bio:"Im from NYC", certifications:"NYU college", achievments:"Personal of the year", user: giovana)
+puts "criou profile"
 
 puts "Creating a new trainning"
 Trainning.create!(description:"xxx", duration:"15min", address:"jhdfwhjr", user: User.last, category: Category.first)
