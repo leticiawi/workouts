@@ -157,11 +157,17 @@ h4 {
 }
 
 .profile-img {
-  width: 302px;
-  height: 300px;
-  margin-left: 25px;
+  margin-right: 45px;
   border-radius: 5px;
 }
+
+.profile-img-test {
+     width: 500px;
+     height: 500px;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
 
 .fa-star {
   font-size: 20px;
