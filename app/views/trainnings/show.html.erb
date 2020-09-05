@@ -11,9 +11,9 @@
          <div class="d-flex text-center">
           <div class="card-body">
             <p class="card-title"><%= @trainning.user.name.capitalize! %></p>
-            <p class="card-title"><%= @trainning.category.name.capitalize! %></p>
+            <p class="card-title"><%= @trainning.category.name %></p>
             <p class="card-title"><%= @trainning.duration %></p>
-            <p class="card-title">" <%= @trainning.description.capitalize! %> "</p>
+            <p class="card-title">" <%= @trainning.description%> "</p>
             <div class="container">
 
               <%= link_to "Book Now", checkout_path(trainning_id: @trainning.id), class: "btn btn-danger btn-sm" %>
