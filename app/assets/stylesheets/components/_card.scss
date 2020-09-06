@@ -100,7 +100,7 @@ h4 {
 .card-trainning {
   margin-top: 15px;
   width: 150px;
-  height: 223px;
+  height: 218px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-bottom: 3px;
@@ -111,12 +111,13 @@ h4 {
 }
 
 .trainning-details {
-  width: 300px;
-  height: 350px;
+  width: 325px;
+  height: 440px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-top: 20px;
   margin-left: 45px;
+  border-radius: 8px;
 }
 
 .card-title {
@@ -148,8 +149,7 @@ h4 {
 }
 
 #select {
-  margin-top: 70px;
-
+  margin-top: 30px;
 }
 
 #text-big {
@@ -178,8 +178,13 @@ h4 {
 .list-group{ 
   margin-bottom: 70px;
 }
- .stars {
-   margin-top: 5px;
-   width: 150px;
-   height: 30px;
- }
+.stars {
+  margin-top: 5px;
+  width: 150px;
+  height: 30px;
+}
+
+#home-infos {
+  margin-bottom: 100px;
+}
+
