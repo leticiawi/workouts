@@ -157,10 +157,10 @@ h4 {
 }
 
 .profile-img {
-  width: 302px;
-  height: 300px;
-  margin-left: 25px;
-  border-radius: 5px;
+  width: 250px;
+  height: 220px;
+  margin-left: 65px;
+  border-radius: 35px;
 }
 
 .fa-star {
@@ -172,19 +172,42 @@ h4 {
 }
 
 .list-group-item {
-  background: rgba(235, 234, 234, 0.301);
+  background: rgba(255, 255, 255, 0.301);
+  border: 0px;
 }
 
 .list-group{ 
   margin-bottom: 70px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 1px 2px 6px #475969b2;
 }
+
 .stars {
-  margin-top: 5px;
-  width: 150px;
-  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 55px;
+  width: 300px;
 }
+
 
 #home-infos {
   margin-bottom: 100px;
 }
+
+.fa-trophy{ 
+  color: rgb(255, 208, 0);
+  font-size: 20px;
+}
+
+.fa-user-check{ 
+  color: black;
+  font-size: 20px;
+}
+
+.fa-address-card{ 
+  color: black;
+  font-size: 20px;
+}
+
 
