@@ -1,31 +1,20 @@
 <div class="container" id="select">
-
-
-<%#= link_to "view details", trainning_path(trainning), class: "btn btn-primary" %>
+  <%#= link_to "view details", trainning_path(trainning), class: "btn btn-primary" %>
   <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
   <div class="container border-bottom">
-  <h3>See all trainnings available in your zone:</h3>
+    <h3>See all trainnings available in your zone:</h3>
   </div>
-
-
-<div class="container">
-  <div class="row">
-    <% @trainnings.each do |trainning| %>
-      <div class="col-6">
-
-        <%#= render "trainnings/cards", trainning: trainning %>
-
-      </div>
-    <% end %>
+  <div class="container">
+    <div class="row">
+      <% @trainnings.each do |trainning| %>
+        <div class="col-6">
+          <%#= render "trainnings/cards", trainning: trainning %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-</div>
-
-
-
-

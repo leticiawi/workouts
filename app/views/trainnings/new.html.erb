@@ -1,15 +1,14 @@
 <div class="container adjust-height" id="select">
-<h3>Design you trainning session:</h3>
+  <h3>Design you trainning session:</h3>
 
   <ul class="list-group">
     <%= simple_form_for @trainning do |form| %>
-    <li class="list-group-item"><%= form.input :category, collection: Category.all %></li>
-    <li class="list-group-item"><%= form.input :description %> </li>
-    <li class="list-group-item"><%= form.input :duration %></li>
-    <li class="list-group-item"><%= form.input :address %></li>
-    <li class="list-group-item"><%= form.input :photo, as: :file %></li>
-    <%= form.submit class: 'btn btn-info btn-block' %>
+      <li class="list-group-item"><%= form.input :category, collection: Category.all %></li>
+      <li class="list-group-item"><%= form.input :description %> </li>
+      <li class="list-group-item"><%= form.input :duration %></li>
+      <li class="list-group-item"><%= form.input :address %></li>
+      <li class="list-group-item"><%= form.input :photo, as: :file %></li>
+      <%= form.submit class: 'btn btn-info btn-block' %>
     <% end %>
   </ul>
-
 </div>
