@@ -5,14 +5,17 @@ Rails.application.routes.draw do
     resources :trainnings, only: [:index]
   end
 
-  # como fazer a rota de review?
+  # como fazer a rota de review vinculada a order, trainning e trainer?
   resources :reviews, only: [:new, :create]
+
+  resources :trainnings do
+    resources :reviews, only: :create
+  end
 
   resources :profiles, only: [:new, :create, :update, :destroy, :show]
 
   get "dashboard", to: "profiles#dashboard"
   get "trainer_board", to: "profiles#dashboard"
-  resources :trainnings
   get "trainer_index", to: "trainnings#trainer_index"
   get "trainer_show/:id", to: "trainnings#trainer_show", as: "trainer_show"
   get "checkout", to: "pages#checkout"
