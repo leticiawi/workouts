@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :trainnings, only: [:index]
   end
 
+  # como fazer a rota de review?
+  resources :reviews, only: [:new, :create]
+
   resources :profiles, only: [:new, :create, :update, :destroy, :show]
 
   get "dashboard", to: "profiles#dashboard"

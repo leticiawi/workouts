@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :orders
   has_many :trainnings, through: :orders
   has_many :sold_trainnings, class_name: "Trainning", dependent: :destroy
+  has_many :reviews, through: :trainnings # como fazer essa validation?
   validates :address, :name, presence: true, on: :update
   has_one_attached :photo
   has_one :profile, dependent: :destroy
