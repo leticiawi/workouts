@@ -4,10 +4,15 @@
       <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
     </div>
 
-    <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
-      <%= f.input :address, class: "input-form" %>
-      <%= f.submit :search, class: "submit"%>
-    <% end %>
+
+        <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
+          <div class="d-flex align-items-baseline">
+            <i class="fas fa-map-marker-alt fa-2x"></i>
+          <%= f.input :address, placeholder: "Address", class: "input-form", label: false %>
+          <%= f.submit :search, class: "submit"%>
+          </div>
+        <% end %>
+
 
     <div class="container adjust-height">
       <div class="container">

@@ -100,7 +100,7 @@ h4 {
 .card-trainning {
   margin-top: 15px;
   width: 150px;
-  height: 223px;
+  height: 218px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-bottom: 3px;
@@ -111,12 +111,13 @@ h4 {
 }
 
 .trainning-details {
-  width: 300px;
-  height: 350px;
+  width: 325px;
+  height: 440px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-top: 20px;
   margin-left: 45px;
+  border-radius: 8px;
 }
 
 .card-title {
@@ -148,8 +149,7 @@ h4 {
 }
 
 #select {
-  margin-top: 70px;
-
+  margin-top: 30px;
 }
 
 #text-big {
@@ -157,11 +157,24 @@ h4 {
 }
 
 .profile-img {
-  width: 302px;
-  height: 300px;
-  margin-left: 25px;
-  border-radius: 5px;
+
+  width: 250px;
+  height: 220px;
+  margin-left: 65px;
+  border-radius: 35px;
+
+ // margin-right: 45px;
+  //border-radius: 5px;
+
 }
+
+.profile-img-test {
+     width: 500px;
+     height: 500px;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
 
 .fa-star {
   font-size: 20px;
@@ -172,14 +185,42 @@ h4 {
 }
 
 .list-group-item {
-  background: rgba(235, 234, 234, 0.301);
+  background: rgba(255, 255, 255, 0.301);
+  border: 0px;
 }
 
-.list-group{ 
+.list-group{
   margin-bottom: 70px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 1px 2px 6px #475969b2;
 }
- .stars {
-   margin-top: 5px;
-   width: 150px;
-   height: 30px;
- }
+
+.stars {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 55px;
+  width: 300px;
+}
+
+
+#home-infos {
+  margin-bottom: 100px;
+}
+
+.fa-trophy{ 
+  color: rgb(255, 208, 0);
+  font-size: 20px;
+}
+
+.fa-user-check{ 
+  color: black;
+  font-size: 20px;
+}
+
+.fa-address-card{ 
+  color: black;
+  font-size: 20px;
+}
+
+
