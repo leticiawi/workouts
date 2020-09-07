@@ -78,6 +78,6 @@ class TrainningsController < ApplicationController
   private
 
   def trainnings_params
-    params.require(:trainning).permit(:duration, :address, :description, :photo)
+    params.require(:trainning).permit(:duration, :address, :description, :photo, :price_cents)
   end
 end

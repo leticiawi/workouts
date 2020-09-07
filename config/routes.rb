@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   end
 
   resources :profiles, only: [:new, :create, :update, :destroy, :show]
-  resources :orders, only: [:show, :create]
+
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+  end
 
   get "dashboard", to: "profiles#dashboard"
   get "trainer_board", to: "profiles#dashboard"
@@ -16,5 +19,7 @@ Rails.application.routes.draw do
   get "checkout", to: "pages#checkout"
 
   root to: 'pages#home'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
