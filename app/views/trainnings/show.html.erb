@@ -6,7 +6,13 @@
 
       <div class="trainning-details">
         <div class="d-flex justify-content-center p-1 border-bottom ">
-          <img class="avatar-large" alt="avatar-large" src="https://avatars3.githubusercontent.com/u/67508360?s=460&v=4" id="avatar"/>
+          <% if @trainning.user.profile && @trainning.user.profile.photo.attached?  %>
+          <%= cl_image_tag @trainning.user.profile.photo.key, class: "avatar avata-large" %>
+          <% else %>
+          <div class="image">
+            <%= image_tag "https://i.ibb.co/w7XyQQ5/WOxxx.png", class: "avatar avata-large"%>
+          </div>
+        <% end %>
         </div>
         <div class="d-flex text-center">
           <div class="card-body">
@@ -43,6 +49,3 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
