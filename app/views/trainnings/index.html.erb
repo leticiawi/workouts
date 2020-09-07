@@ -1,4 +1,5 @@
 <div class="container" id="select">
+<div>
 
 
 <%#= link_to "view details", trainning_path(trainning), class: "btn btn-primary" %>
@@ -13,13 +14,11 @@
   </div>
 
 
-  <div class="container">
-    <div class="row">
+  <div class="container margin-bottom" >
+    <div class="row" >
       <% @trainnings.each do |trainning| %>
         <div class="col-6">
-
           <%= render "trainnings/cards", trainning: trainning %>
-
         </div>
       <% end %>
     </div>

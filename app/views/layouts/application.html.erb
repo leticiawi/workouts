@@ -26,8 +26,10 @@
       <% if user_signed_in? %>
   <div class="footer fixed-bottom">
     <div class="footer-links">
-        <a href="#"><i class="fas fa-home"></i></a>
-        <a href="#"><i class="fas fa-dumbbell"></i></a>
+        <a href="#"><i class="far fa-user-circle"></i>  </a>
+        <%= link_to categories_path, class: "btn-trainning" do%>
+        <i class="fas fa-dumbbell"></i></a>
+        <% end  %>
         <%= link_to root_path, class: "logo-home" do %>
         <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png" %>
         <% end %>
@@ -36,7 +38,6 @@
           <i class="fas fa-sign-out-alt"></i>
         <% end %>          
       <% end %>
-
     </div>
   </div>
 
