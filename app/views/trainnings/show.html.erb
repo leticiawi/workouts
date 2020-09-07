@@ -11,9 +11,9 @@
          <div class="d-flex text-center">
           <div class="card-body">
             <p class="card-title"><i class="fas fa-user-check"></i><%=" "%><%= @trainning.user.name.capitalize! %></p>
-            <p class="card-title"><%= image_tag ("gym.png")%><%=" "%><%= @trainning.category.name.capitalize! %></p>
+            <p class="card-title"><%= image_tag ("gym.png")%><%=" "%><%= @trainning.category.name %></p>
             <p class="card-title"><i class="far fa-clock"></i></i><%=" "%><%= @trainning.duration %></p>
-            <p class="card-title">" <%= @trainning.description.capitalize! %> "</p>
+            <p class="card-title">" <%= @trainning.description %> "</p>
             <div class="container">
 
               <% if @trainning.user.profile %>
