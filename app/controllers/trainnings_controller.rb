@@ -11,7 +11,7 @@ class TrainningsController < ApplicationController
       {
         lat: trainning.latitude,
         lng: trainning.longitude,
-        infoWindow: render_to_string(partial: "cards", locals: { trainning: trainning })
+        infoWindow: render_to_string(partial: "card_map", locals: { trainning: trainning })
         # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS'}
       }
     end
@@ -78,6 +78,6 @@ class TrainningsController < ApplicationController
   private
 
   def trainnings_params
-    params.require(:trainning).permit(:duration, :address, :description, :photo)
+    params.require(:trainning).permit(:duration, :address, :description, :photo, :price_cents)
   end
 end

@@ -1,24 +1,24 @@
-
 <div class="container" id="select">
-  <h3><%= current_user.name %>'s trainning's detail:</h3>
-  <div class="container mx-5 py-1">
+ <div class="container text-center border-bottom">
+    <h3><%= current_user.name %>'s trainning's detail:</h3>
+  </div>
     <div class="row">
-      <div class="col-6">
-        <div class="card-trainning-detail">
+      <div class="col-12">
+        <div class="trainning-details">
           <div class="d-flex justify-content-center p-1 border-bottom ">
             <img class="avatar-large" alt="avatar-large" src="https://avatars3.githubusercontent.com/u/67508360?s=460&v=4" />
-            </div>
-            <div class="card-body">
-              <p class="card-title"><%= @trainning.user.name %></p>
-              <p class="card-title"><%= @trainning.category.name %></p>
-              <p class="card-title"><%= @trainning.duration %></p>
-              <p class="card-title">" <%= @trainning.description %> "</p>
-              <%= link_to "delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" } %>
-              <%= link_to "view all", trainer_index_path, class: "btn btn-primary btn-sm" %>
-              <%= link_to "edit", edit_trainning_path(@trainning), class: "btn btn-warning btn-sm" %>
-            </div>
+          </div>
+        <div class="card-body">
+          <p class="card-title"><%= @trainning.user.name %></p>
+          <p class="card-title"><%= @trainning.category.name %></p>
+          <p class="card-title"><%= @trainning.duration %></p>
+          <p class="card-title">Amount: <%= @trainning.price_cents %> $</p>
+          <p class="card-title">" <%= @trainning.description %> "</p>
+          <%= link_to "delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "view all", trainer_index_path, class: "btn btn-primary btn-sm" %>
+          <%= link_to "edit", edit_trainning_path(@trainning), class: "btn btn-warning btn-sm" %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </div>
