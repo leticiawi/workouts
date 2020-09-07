@@ -10,7 +10,7 @@
       <div class="d-flex justify-content-center p-1 border-bottom ">
 
         <% if trainning.user.profile && trainning.user.profile.photo.attached?  %>
-          <%= cl_image_tag trainning.user.profile.photo.key, class: "avatar avata-large" %>
+          <%= cl_image_tag trainning.user.profile.photo.key, class: "avatar avatar-large" %>
         <% else %>
           <div class="image">
             <%= image_tag "https://i.ibb.co/w7XyQQ5/WOxxx.png"%>
