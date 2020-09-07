@@ -13,13 +13,25 @@
             <p class="card-title"><%= @trainning.user.name.capitalize! %></p>
             <p class="card-title"><%= @trainning.category.name.capitalize! %></p>
             <p class="card-title"><%= @trainning.duration %></p>
-            <p class="card-title">" <%= @trainning.description.capitalize! %> "</p>
+            <!-- <p class="card-title">" <%#= @trainning.description.capitalize! %> "</p> -->
             <div class="container">
               <%= link_to "Book Now", checkout_path(trainning_id: @trainning.id), class: "btn btn-danger btn-sm" %>
               <%= link_to "View All", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
               <% if @trainning.user.profile %>
                 <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-success btn-sm btn-block" %>
               <% end %>
+
+              <%# if @trainning tiver order paid %>
+                <%= link_to "Add a Review", new_trainning_review_path(@trainning), class: "btn btn-primary btn-sm" %>
+              <%# end %>
+              <%# if tiver review, mostra num container %>
+                <% @trainning.reviews.each do |review| %>
+                  <%= review.rating %>
+                  <%= review.content %>
+                  <%= review.user.name %>
+                <% end %>
+              <%# end %>
+
             </div>
           </div>
         </div>

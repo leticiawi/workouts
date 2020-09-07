@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-xs-4">
-      <%= simple_form_for @review do |form| %>
+      <%= simple_form_for [@trainning, @review] do |form| %>
         <%= form.input :rating, collection: (1..5).to_a %>
         <%= form.input :content %>
         <%= form.submit class: 'btn btn-info btn-block' %>
@@ -11,3 +11,4 @@
     </div>
   </div>
 </div>
+

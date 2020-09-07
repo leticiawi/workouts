@@ -5,11 +5,8 @@ Rails.application.routes.draw do
     resources :trainnings, only: [:index]
   end
 
-  # como fazer a rota de review vinculada a order, trainning e trainer?
-  resources :reviews, only: [:new, :create]
-
   resources :trainnings do
-    resources :reviews, only: :create
+    resources :reviews, only: [:create, :new]
   end
 
   resources :profiles, only: [:new, :create, :update, :destroy, :show]
@@ -23,3 +20,4 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
