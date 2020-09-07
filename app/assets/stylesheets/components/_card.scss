@@ -2,6 +2,9 @@
   margin-top: 15px;
 }
 
+a {
+   color: white; text-decoration: none; background-color: transparent;
+ }
 
 .card-trip {
   overflow: hidden;
@@ -112,7 +115,7 @@ h4 {
 
 .trainning-details {
   width: 325px;
-  height: 700px;
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-top: 20px;
