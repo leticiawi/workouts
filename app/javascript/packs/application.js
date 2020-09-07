@@ -27,6 +27,7 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initStarRating } from '../plugins/init_star_rating';
+import {getCurrentWeather} from './get_current_weather';
 
 
 // Internal imports, e.g:
@@ -35,6 +36,7 @@ import { initStarRating } from '../plugins/init_star_rating';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
+  getCurrentWeather();
   // Call your functions here, e.g:
   // initSelect2();
 });

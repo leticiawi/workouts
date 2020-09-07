@@ -48,15 +48,10 @@ a {
 
 
 .image img {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  border-radius: 25%;
-  width: 150px;
-  height: 144px;
-
+    display: block;
+    border-radius: 25%;
+    width: 70px;
+    height: 70px;
 }
 
 #username {
@@ -115,7 +110,6 @@ h4 {
 
 .trainning-details {
   width: 325px;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-top: 20px;
@@ -226,4 +220,15 @@ h4 {
   font-size: 20px;
 }
 
+.margin-bottom {
+  margin-bottom: 70px;
+}
+ .main-container {
+   margin-bottom: 150px;
+ } 
 
+ a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}

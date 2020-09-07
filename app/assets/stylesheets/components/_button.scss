@@ -4,7 +4,6 @@
   border-radius: 20px;
   background: #f8b227e1;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.548);
-  box-shadow: 0px 4px 2px #f87b27e1;
   border: 1px solid rgb(255, 208, 0);
   font-size: 18px;
 }
@@ -35,7 +34,7 @@
 
 .submit {
   color: white;
-  height: 41px ;
+  height: 43px ;
   width: 80px;
   margin-top: 8px;
   border: 1px solid #ced4da;
@@ -71,7 +70,7 @@
   height: 35px;
   display: block;
   text-align: center;
-  color: #40555f;
+  color: rgb(241, 240, 240);
   background-color: #F7B32D;
   margin-top: 14px;
   border-radius: 10px;
@@ -114,8 +113,8 @@ abbr[title="required"] {
   background: #5c636e;
   color: white;
   font-size: 15px;
-  margin-top: -31px;
-  margin-left: -2px;
+  margin-top: -41px;
+  margin-left: -1px;
 }
 
 .btn-success {
@@ -187,5 +186,32 @@ abbr[title="required"] {
   font-size: 18px;
   margin-bottom: 15px;
   margin-top: 15px;
+} 
+
+.btn-trainning {
+  border: 0px;
+  font-size: 25px;
+  color: #636870;
+  background: rgba(128, 128, 128, 0);
+  margin-left: 10px;
+}
+
+.fa-user-circle {
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.fa-2x {
+  font-size: 35px;
+  padding-top: 10px;
+  margin-right: 15px;
+}
+
+.btn-profile-footer {
+    border: 0px;
+    font-size: 25px;
+    color: #636870;
+    background: rgba(128, 128, 128, 0);
+    margin-left: 10px;
 }
 
