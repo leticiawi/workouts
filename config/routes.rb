@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :profiles, only: [:new, :create, :update, :destroy, :show]
+  resources :orders, only: [:show, :create]
 
   get "dashboard", to: "profiles#dashboard"
   get "trainer_board", to: "profiles#dashboard"

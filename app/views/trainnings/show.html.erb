@@ -16,7 +16,12 @@
             <p class="card-title">" <%= @trainning.description%> "</p>
             <div class="container">
 
-              <%= link_to "Book Now", checkout_path(trainning_id: @trainning.id), class: "btn btn-danger btn-sm" %>
+              <%#= link_to "Book Now", checkout_path(trainning_id: @trainning.id), class: "btn btn-danger btn-sm" %>
+              <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'trainning_id', @trainning.id %>
+              <%= submit_tag 'Purchase', class: 'btn btn-danger btn-sm' %>
+              <% end %>
+
               <%= link_to "View All", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
               <% if @trainning.user.profile %>
                 <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-success btn-sm btn-block" %>
