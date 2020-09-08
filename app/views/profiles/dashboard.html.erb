@@ -3,15 +3,15 @@
     <div class="container text-center border-bottom">
       <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
     </div>
-
-
-        <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
-          <div class="d-flex align-items-baseline">
-            <i class="fas fa-map-marker-alt fa-2x"></i>
-          <%= f.input :address, placeholder: "Address", class: "input-form", label: false %>
-          <%= f.submit :search, class: "submit"%>
-          </div>
-        <% end %>
+    <div class="container text-center border-bottom my-3">
+      <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
+        <div class="d-flex align-items-baseline">
+          <i class="fas fa-map-marker-alt fa-2x"></i>
+        <%= f.input :address, placeholder: "Address", class: "input-form", label: false %>
+        <%= f.submit :search, class: "submit"%>
+        </div>
+      <% end %>
+    </div>
 
 
     <div class="container adjust-height">
@@ -29,6 +29,9 @@
               </div>
               <div class="col-6">
                 <li class="btn-profile">Edit profile</li>
+              </div>
+              <div class="col-6">
+                <li class="btn-profile">Add Review</li>
               </div>
               <div class="col-6">
                 <li class="btn-profile">Add Review</li>

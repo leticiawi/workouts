@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :new]
   end
 
-  resources :profiles, only: [:new, :create, :update, :destroy, :show]
+  resources :profiles, only: [:new, :create, :update, :edit, :show]
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
