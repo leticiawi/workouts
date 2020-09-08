@@ -1,0 +1,10 @@
+.star_rating{
+  color: yellow;
+  &:before {
+    content: “\u2605”;
+  }
+}
+
+.empty_star_rating {
+  color: yellow;
+}
