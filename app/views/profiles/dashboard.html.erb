@@ -3,6 +3,7 @@
     <div class="container text-center border-bottom">
       <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
     </div>
+
     <div class="container text-center border-bottom my-3">
       <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
         <div class="d-flex align-items-baseline">
@@ -12,7 +13,13 @@
         </div>
       <% end %>
     </div>
-
+    
+    <div class="container">
+      <div class="d-flex justify-content-between">
+        <p class="weather"><%= "#{@weather["main"]["temp"]}°C" %></p>
+        <%= image_tag "http://openweathermap.org/img/w/#{@weather["weather"].first["icon"]}.png", height: 75, width: 75%>
+      </div>
+    </div>
 
     <div class="container adjust-height">
       <div class="container">
@@ -34,7 +41,7 @@
                 <li class="btn-profile">Add Review</li>
               </div>
               <div class="col-6">
-                <li class="btn-profile">Add Review</li>
+                <%= link_to "My Bookings", orders_path, class: "btn-profile"%>
               </div>
             </div>
           </div>

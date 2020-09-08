@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:new, :create, :update, :edit, :show]
 
-  resources :orders, only: [:show, :create] do
+  resources :orders, only: [:show, :create, :index] do
     resources :payments, only: :new
   end
 
