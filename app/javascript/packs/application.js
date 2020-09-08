@@ -27,7 +27,8 @@ import "bootstrap";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initStarRating } from '../plugins/init_star_rating';
-import {getCurrentWeather} from './get_current_weather';
+import { getCurrentWeather } from './get_current_weather';
+import { initChatroomCable } from '../channels/chatroom_channel';
 
 
 // Internal imports, e.g:
@@ -37,6 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
   getCurrentWeather();
+  initChatroomCable();
   // Call your functions here, e.g:
   // initSelect2();
 });
