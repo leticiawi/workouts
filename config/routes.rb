@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :payments, only: :new
   end
 
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
+
   get "dashboard", to: "profiles#dashboard"
   get "trainer_board", to: "profiles#dashboard"
   get "trainer_index", to: "trainnings#trainer_index"
