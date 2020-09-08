@@ -1,11 +1,12 @@
 require 'open_weather'
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:show, :update, :edit, :new]
+
   def new
     @profile = Profile.new
   end
 
   def show
-    @profile = Profile.find(params[:id])
     @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
   end
 
@@ -20,12 +21,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
     if @profile.update(profile_params)
-      redirect_to profile_path(profile)
+      redirect_to profile_path(@profile)
     else
       render :edit
     end
@@ -52,6 +52,10 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
 
   def profile_params
     params.require(:profile).permit(:name, :address, :photo, :age, :speciality, :bio, :certifications, :achievments, :user_id)

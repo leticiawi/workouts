@@ -20,7 +20,7 @@
         <div class="card-body">
           <!-- rating p: 22-29 -->
           <p class="card-title">
-            <% rating = @trainning.user.average_rating %>
+            <% rating = trainning.average_rating %>
             <% rating.times do %>
               <span class="star_rating"><%= "\u2605" %></span>
             <% end %>

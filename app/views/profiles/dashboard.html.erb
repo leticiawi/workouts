@@ -3,6 +3,7 @@
     <div class="container text-center border-bottom">
       <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
     </div>
+
     <div class="container text-center border-bottom my-3">
       <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
         <div class="d-flex align-items-baseline">
@@ -40,7 +41,7 @@
                 <li class="btn-profile">Add Review</li>
               </div>
               <div class="col-6">
-                <li class="btn-profile">Add Review</li>
+                <%= link_to "My Bookings", orders_path, class: "btn-profile"%>
               </div>
             </div>
           </div>
