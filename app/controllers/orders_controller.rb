@@ -1,6 +1,12 @@
 class OrdersController < ApplicationController
+before_action :set_order, except: :index
+
   def show
   @order = current_user.orders.find(params[:id])
+  end
+
+  def index
+    @bookings = current_user.orders
   end
 
   def create
@@ -23,6 +29,11 @@ class OrdersController < ApplicationController
   order.update(checkout_session_id: session.id)
   redirect_to new_order_payment_path(order)
   end
-end
 
-#trainning_sku: trainning.sku
+ private
+
+  def set_order
+    @order = current_user.orders
+  end
+
+end

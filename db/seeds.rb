@@ -19,7 +19,7 @@ Profile.create!(speciality:"personal", age:"40", bio:"Im from NYC", certificatio
 puts "criou profile"
 
 puts "Creating a new trainning"
-# Trainning.create!(description:"xxx", duration:"15min", address:"Rua Hum, 123", user: User.last, category: Category.first)
+Trainning.create!(description:"xxx", duration:"15min", address:"Rua Hum, 123", user: User.last, category: Category.first)
 puts "Created new trainning"
 
 puts "Criou um user"

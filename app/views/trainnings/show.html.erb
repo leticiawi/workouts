@@ -3,55 +3,5 @@
     <h3>Trainning's details:</h3>
   </div>
 </div>
-      <div class="trainning-details">
-        <div class="d-flex justify-content-center p-1 border-bottom ">
-          <% if @trainning.user.profile && @trainning.user.profile.photo.attached?  %>
-          <%= cl_image_tag @trainning.user.profile.photo.key, class: "avatar avata-large" %>
-          <% else %>
-          <div class="image">
-            <%= image_tag "https://i.ibb.co/w7XyQQ5/WOxxx.png", class: "avatar avata-large"%>
-          </div>
-        <% end %>
-        </div>
-        <div class="d-flex text-center">
-          <div class="card-body">
-            <!-- rating p: 13-21 -->
-            <p class="card-title">
-              <% rating = @trainning.reviews.average(:rating).to_i %>
-              <% rating.times do %>
-                <span class="star_rating"><%= "\u2605" %></span>
-              <% end %>
-              <% (5 - rating).times do %>
-                <span class="empty_star_rating">☆</span>
-              <% end %>
-            </p>
-            <p class="card-title"><i class="fas fa-user-check"></i><%=" "%><%= @trainning.user.name.capitalize! %></p>
-            <p class="card-title"><%= image_tag ("gym.png")%><%=" "%><%= @trainning.category.name %></p>
-            <p class="card-title"><i class="far fa-clock"></i></i><%=" "%><%= @trainning.duration %></p>
-            <p class="card-title">Amount: <%= @trainning.price_cents/100 %> $</p>
-            <p class="card-title">" <%= @trainning.description %> "</p>
-            <div class="container">
-              <%#= link_to "Book Now", checkout_path(trainning_id: @trainning.id), class: "btn btn-danger btn-sm" %>
-              <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'trainning_id', @trainning.id %>
-              <%= submit_tag 'Book Now', class: 'btn btn-danger btn-sm' %>
-              <% end %>
-              <%= link_to "View All", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
-              <% if @trainning.user.profile %>
-                <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-success btn-sm btn-block" %>
-              <% end %>
-              <%# if @trainning tiver order paid %>
-                <%= link_to "Add a Review", new_trainning_review_path(@trainning), class: "btn btn-primary btn-sm" %>
-              <%# end %>
-              <%# if tiver review, mostra num container %>
-                <%# @trainning.reviews.each do |review| %>
-                  <%#= review.rating %>
-                  <%#= review.content %>
-                  <%#= review.user.name %>
-                <%# end %>
-              <%# end %>
-              <%#= link_to "Book Now", checkout_path(trainning_id: @trainning.id), class: "btn btn-danger btn-sm" %>
-            </div>
-          </div>
-        </div>
-      </div>
+
+  <%= render "trainnings/card_details"%>

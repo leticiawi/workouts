@@ -50,12 +50,12 @@ a {
 .image img {
   display: block;
   border-radius: 25%;
-  width: 200px;
-  height: 200px;
-  margin-left: auto;
+  width: 50px;
+  height: 50px;
   margin-right: auto;
-  margin-top: 10px;
+  margin-top: -20px;
 }
+
 
 #username {
   color: rgb(51, 51, 51);
@@ -101,7 +101,6 @@ h4 {
 .card-trainning {
   margin-top: 15px;
   width: 150px;
-  height: 218px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-bottom: 3px;
@@ -234,7 +233,7 @@ h4 {
   color: white;
   text-decoration: none;
   background-color: transparent;
-} 
+}
 
 .board-photo {
   width: 100px;
