@@ -1,5 +1,8 @@
 class TrainningsController < ApplicationController
+  before_action :set_trainning, only: [:show, :update, :edit]
+
   def index
+    @profile = current_user.profile
     @trainnings = Trainning.geocoded
     if params[:category_id]
       @trainnings = @trainnings.where(category_id: params[:category_id])
@@ -20,6 +23,7 @@ class TrainningsController < ApplicationController
   def show
     @trainning = Trainning.find(params[:id])
     @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
+    @profile = current_user.profile
   end
 
   def new
@@ -49,9 +53,8 @@ class TrainningsController < ApplicationController
 
   def update
     @trainning = Trainning.find(params[:id])
-    @trainning.category = Category.find(params[:trainning][:category])
-    @trainning.update(trainnings_params)
-    if @trainning.save
+
+    if @trainning.update(trainnings_params)
       redirect_to trainer_show_path(@trainning)
     else
       render :edit
@@ -71,6 +74,7 @@ class TrainningsController < ApplicationController
   def trainer_show
     @trainning = Trainning.find(params[:id])
     @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
+    @profile = current_user.profile
   end
 
   def full_address
@@ -78,6 +82,10 @@ class TrainningsController < ApplicationController
   end
 
   private
+
+  def set_trainning
+    @trainning = Trainning.find(params[:id])
+  end
 
   def trainnings_params
     params.require(:trainning).permit(:duration, :address, :description, :photo, :price_cents)

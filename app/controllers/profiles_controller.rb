@@ -1,10 +1,11 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:show, :update, :edit]
+
   def new
     @profile = Profile.new
   end
 
   def show
-    @profile = Profile.find(params[:id])
     @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
   end
 
@@ -19,7 +20,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
@@ -45,6 +45,10 @@ class ProfilesController < ApplicationController
   end
 
   private
+
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
 
   def profile_params
     params.require(:profile).permit(:name, :address, :photo, :age, :speciality, :bio, :certifications, :achievments, :user_id)

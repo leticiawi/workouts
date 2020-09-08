@@ -15,7 +15,7 @@
         </div>
       </div>
 
-      <div class="container mt-5">
+      <div class="container">
         <%# if @trainning.user.profile && @trainning.user.profile.photo.attached? %>
         <div class="image">
           <%#= image_tag current_user.photo.key%>
@@ -25,7 +25,7 @@
          <%# end %>
 
       <div class="container">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center pt-5">
             <div class="row">
               <div class="col-6">
                 <%= link_to "All Trainnings", trainnings_path, class: "btn-profile"%>

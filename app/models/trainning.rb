@@ -12,4 +12,9 @@ class Trainning < ApplicationRecord
   def average_rating
     self.reviews.average(:rating).to_i
   end
+
+  def average_level
+    @pending = self.orders.select{o | o.state == "state" }
+    @level = @pending.count
+  end
 end
