@@ -208,7 +208,7 @@ h4 {
 }
 
 .fa-trophy{
-  color: rgb(255, 208, 0);
+  color: black;
   font-size: 20px;
 }
 
@@ -241,11 +241,12 @@ h4 {
 }
 
 .weather {
-  margin-top: 8px;
-  font-size: 30px;
-  color: rgb(78, 88, 105);
-  font-weight: 400;
-  font-family: 'IBM Plex Sans', sans-serif;  
+  margin-top: -10px;
+  margin-left: 12px;
+  font-size: 40px;
+  color: #353f50;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .card-product {
@@ -281,4 +282,9 @@ h4 {
   padding: 16px;
 }
 
+.weather-icon{
+  font-size: 50px;
+  color: rgb(51, 103, 161);
+  
+}
 
