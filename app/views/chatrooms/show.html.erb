@@ -1,4 +1,5 @@
-<!-- <h1>#<%#= @chatroom.name %></h1> -->
+<h1>#<%= @chatroom.trainer.email %></h1>
+<h1>#<%= @chatroom.user.email %></h1>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
     <%= render "messages/message", message: message %>
