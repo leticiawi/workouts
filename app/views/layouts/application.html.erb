@@ -25,14 +25,22 @@
     <% if user_signed_in? %>
       <div class="footer fixed-bottom">
         <div class="footer-links">
-          <a href="#"><i class="far fa-user-circle"></i>  </a>
+            <% if current_user.profile%>
+                <%= link_to profile_path(current_user.profile)  do %>
+                  <i class="far fa-user-circle"></i>
+                <% end %>
+                <% else %>
+                <%= link_to new_profile_path do %>
+                  <i class="far fa-user-circle"></i>
+                <% end %>
+            <% end %>
           <%= link_to categories_path, class: "btn-trainning" do%>
-          <i class="fas fa-dumbbell"></i></a>
+            <i class="fas fa-dumbbell"></i></a>
           <% end  %>
           <%= link_to root_path, class: "logo-home" do %>
             <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png" %>
           <% end %>
-          <a href="#"><i class="far fa-comments"></i></a>
+            <a href="#"><i class="far fa-comments"></i></a>
           <%= button_to destroy_user_session_path, method: :delete, class: "logout-icon", data: { confirm: "Are you sure?" } do %>
             <i class="fas fa-sign-out-alt"></i>
           <% end %>

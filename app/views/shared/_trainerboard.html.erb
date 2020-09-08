@@ -12,8 +12,8 @@
         <%#= image_tag current_user.photo.key%>
       </div>
       <%# else %>
-      <div class="image">
-        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
+      <div class="image justify-content-center" >
+        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png", class: "board-photo" %>
       </div>
        <%# end %>
 
@@ -29,7 +29,6 @@
             <div class="col-6">
               <%= link_to "Add trainning", new_trainning_path, class: "btn-profile"%>
             </div>
-
             <% if current_user.profile%>
               <div class="col-6">
                 <%= link_to "Profile", profile_path(profile), class: "btn-profile"%>

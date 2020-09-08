@@ -1,4 +1,4 @@
 const getCurrentWeather = () => {
-
+  
 }
  export {getCurrentWeather};
