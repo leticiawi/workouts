@@ -3,6 +3,9 @@
     <%#= cl_image_tag @profile.photo.key, height:300, width:355, crop: :fill, class: "profile-img" %>
     <%= cl_image_tag(@profile.photo.key, height:300, width:355, crop: :thumb, gravity: :face) %>
 
+    <% if current_user ==! @profile.user  %>
+      <%= link_to "Back", trainnings_path, class: "btn btn-ghost" %>
+    <% end %>
 
       <ul class="list-group">
 

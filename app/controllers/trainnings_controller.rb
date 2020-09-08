@@ -3,9 +3,11 @@ class TrainningsController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @trainnings = Trainning.geocoded
+    @trainnings = Trainning.geocoded.where.not(user: current_user)
+    @category_id = params[:category_id]
     if params[:category_id]
-      @trainnings = @trainnings.where(category_id: params[:category_id])
+      #User.where("user != current_use AND category_id: @category_id ")
+      @trainnings
     elsif params[:search]
       @trainnings = @trainnings.near(params[:search][:address], 15)
 
