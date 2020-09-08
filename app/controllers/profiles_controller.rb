@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
   end
 
   def create
@@ -23,7 +24,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(profile_params)
-      redirect_to dashboard_path
+      redirect_to profile_path(profile)
     else
       render :edit
     end

@@ -1,7 +1,7 @@
 <div class="container" id="select">
 
 <div class="d-flex justify-content-center border-bottom">
-<h3><%= current_user.name %>'s trainnings:</h3>
+<h3><%= current_user.name %>'s trainning's:</h3>
 </div>
       <div class="row">
       <% @trainnings.each do |trainning| %>
@@ -18,6 +18,16 @@
         <% end %>
       </div>
         <div class="card-body">
+          <!-- rating p: 22-29 -->
+          <p class="card-title">
+            <% rating = @trainning.user.average_rating %>
+            <% rating.times do %>
+              <span class="star_rating"><%= "\u2605" %></span>
+            <% end %>
+            <% (5 - rating).times do %>
+              <span class="empty_star_rating">☆</span>
+            <% end %>
+          </p>
           <p class="card-title" id="title-size"><%= trainning.user.name %></p>
           <p class="card-title" id="title-size"><%= trainning.category.name %></p>
           <p class="card-title" id="title-size"><%= trainning.duration %></p>

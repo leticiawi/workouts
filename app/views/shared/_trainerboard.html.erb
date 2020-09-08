@@ -1,50 +1,64 @@
+
 <div class="container" id="select">
   <div id="text-big">
     <div class="container text-center border-bottom">
       <h3>Hello, <%= current_user.name %> !</h3>
-      <h5>--Ready for challenges?--</h5>
+      <h5>Ready for today´s challenges?</h5>
     </div>
   </div>
-  <div class="container adjust-height">
-    <div class="container">
-      <%# if current_user.photo.attached? %>
-      <div class="image">
-        <%#= image_tag current_user.photo.key%>
-      </div>
-      <%# else %>
-      <div class="image justify-content-center" >
-        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png", class: "board-photo" %>
-      </div>
-       <%# end %>
+    <div class="container adjust-height">
 
-    <div class="container">
-      <div class="d-flex justify-content-center">
-          <div class="row">
-            <div class="col-6">
-              <%= link_to "All trainnings", trainnings_path, class: "btn-profile"%>
-            </div>
-            <div class="col-6">
-              <%= link_to "My trainnings", trainer_index_path, class: "btn-profile"%>
-            </div>
-            <div class="col-6">
-              <%= link_to "Add trainning", new_trainning_path, class: "btn-profile"%>
-            </div>
-            <% if current_user.profile%>
+    <div class="banner-trainer" style='background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1520774779505-a7782b3fb733?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80);'>
+      <div class="container pb-5">
+        <div class="image">
+          <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
+        </div>
+      </div>
+
+      <div class="container mt-5">
+        <%# if @trainning.user.profile && @trainning.user.profile.photo.attached? %>
+        <div class="image">
+          <%#= image_tag current_user.photo.key%>
+          <%#= cl_image_tag @trainning.user.profile.photo.key %>
+        </div>
+        <%# else %>
+         <%# end %>
+
+      <div class="container">
+        <div class="d-flex justify-content-center">
+            <div class="row">
               <div class="col-6">
-                <%= link_to "Profile", profile_path(profile), class: "btn-profile"%>
+                <%= link_to "All Trainnings", trainnings_path, class: "btn-profile"%>
               </div>
-            <% else %>
               <div class="col-6">
-                <%= link_to "Create Profile", new_profile_path, class: "btn-profile"%>
+                <%= link_to "My Trainnings", trainer_index_path, class: "btn-profile"%>
               </div>
-            <% end %>
+              <div class="col-6">
+                <%= link_to "Add Trainning", new_trainning_path, class: "btn-profile"%>
+              </div>
+              <div class="col-6">
+                <%= link_to "Bookings", new_trainning_path, class: "btn-profile"%>
+              </div>
+              <% if current_user.profile%>
+                <div class="col-6">
+                  <%= link_to "Profile", profile_path(profile), class: "btn-profile"%>
+                </div>
+                <div class="col-6">
+                  <%= link_to "EditProfile", edit_profile_path(profile), class: "btn-profile"%>
+                </div>
+              <% else %>
+                <div class="col-6">
+                  <%= link_to "Create Profile", new_profile_path, class: "btn-profile"%>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
-          <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
       </div>
     </div>
-        <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
   </div>
 </div>
+
+
 
 

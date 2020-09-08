@@ -4,10 +4,24 @@
     <%= cl_image_tag(@profile.photo.key, height:300, width:355, crop: :thumb, gravity: :face) %>
 
       <div class="container stars">
-        <%= image_tag ("health.png")%><%= image_tag ("health.png")%><%= image_tag ("health.png")%><%= image_tag ("health.png")%><%= image_tag ("health.png")%>
+          <p class="card-title">
+            <% if @profile.user.reviews.present? %>
+              <% rating = @profile.user.average_rating %>
+              <% rating.times do %>
+                <span class="star_rating"><%= "\u2605" %></span>
+              <% end %>
+              <% (5 - rating).times do %>
+                <span class="empty_star_rating">☆</span>
+              <% end %>
+            <% else %>
+              <span>Trainer has no reviews yet.</span>
+            <% end %>
+        </p>
+
+        <%#= image_tag ("health.png")%><%#= image_tag ("health.png")%><%#= image_tag ("health.png")%><%#= image_tag ("health.png")%><%#= image_tag ("health.png")%>
         </div>
       <ul class="list-group">
-
+        <li class="list-group-item"><%= @orders_count %> bookings</li>
         <li class="list-group-item"><i class="fas fa-user-check"></i><%=" "%><%= @profile.user.name %></li>
         <li class="list-group-item"><i class="fas fa-address-card"></i><%=" "%><%= @profile.bio %></li>
         <li class="list-group-item"><%= image_tag ("age.png")%><%=" "%><%= @profile.age  %></li>

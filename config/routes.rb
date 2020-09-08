@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   end
 
   resources :trainnings do
-    resources :reviews, only: [:create, :new]
+    resources :reviews, only: [:create, :new, :index]
   end
 
-  resources :profiles, only: [:new, :create, :update, :destroy, :show]
+  resources :profiles, only: [:new, :create, :update, :edit, :show]
 
   resources :orders, only: [:show, :create] do
     resources :payments, only: :new
