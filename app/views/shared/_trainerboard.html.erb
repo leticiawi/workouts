@@ -2,14 +2,15 @@
   <div id="text-big">
     <div class="container text-center border-bottom">
       <h3>Hello, <%= current_user.name %> !</h3>
-      <h5>--Ready for challenges?--</h5>
+      <h5>Ready for today´s challenges?</h5>
     </div>
   </div>
   <div class="container adjust-height">
     <div class="container">
-      <%# if current_user.photo.attached? %>
+      <%# if @trainning.user.profile && @trainning.user.profile.photo.attached? %>
       <div class="image">
         <%#= image_tag current_user.photo.key%>
+        <%#= cl_image_tag @trainning.user.profile.photo.key %>
       </div>
       <%# else %>
       <div class="image">
@@ -33,6 +34,7 @@
             <% if current_user.profile%>
               <div class="col-6">
                 <%= link_to "Profile", profile_path(profile), class: "btn-profile"%>
+                <%= link_to "Edit Profile", edit_profile_path(profile), class: "btn-profile"%>
               </div>
             <% else %>
               <div class="col-6">
