@@ -1,14 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
+      <div class="chat-header"><h4>#<%= @chatroom.id %></h4></div>
       <div class="messages">
         <% @chatroom.messages.each do |message| %>
           <%= render "messages/message", message: message, user_is_messages_author: message.user == current_user %>
         <% end %>
       </div>
       <div id="create-message">
-        <%= simple_form_for[ @chatroom, Message.new ] do |f| %>
-          <%= f.imput :content, label: false %>
+        <%= simple_form_for [ @chatroom, Message.new ], remote: true, html: {autocomplete: "off" } do |f| %>
+          <%= f.input :content, label: false %>
+          <%= f.submit %>
         <% end %>
       </div>
     </div>
@@ -20,9 +22,9 @@
     App['chatroom_<%= @chatroom.id %>'] = App.cable.subscriptions.create({ channel: 'ChatRoomsChannel', chatroom_id: <%= @chatroom.id %> }, {
       received: (data) => {
         if (data.current_user_id !== <%= current_user.id %>) {
-        const messagesContainer = document.querySelector('.messages');
-        messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
-        scrollLastMessageIntoView();
+          const messagesContainer = document.querySelector('.messages');
+          messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+          scrollLastMessageIntoView();
         }
       }
     })
