@@ -1,12 +1,20 @@
-<h1>My Bookings</h1>
-
-  <div class="container">
-      <% @bookings.each do |booking| %>
-    <li>
-      <p><%= booking.trainning.user.name %></p>
-      <p><%= booking.trainning.category.name %></p>
-      <p><%= booking.trainning.duration %></p>
-        <!--<p class="card-title">" <%#= trainning.description %> "</p>-->
-    </li>
-      <% end %>
+<div class="container" id="select">
+  <div class="container text-center border-bottom">
+    <h3>My Bookings:</h3>
   </div>
+    <div class="container">
+      <% @bookings.each do |booking| %>
+      <div class="card-product">
+      <%= cl_image_tag booking.trainning.user.profile.photo.key, class: "img" %>
+      <div class="card-product-infos">
+        <h2><%= booking.trainning.user.name %></h2>
+        <p><strong>Category:</strong> <%= booking.trainning.category.name %></p>
+        <p><strong>Duration:</strong> <%= booking.trainning.duration %></p>
+        <%= link_to "Add Review",  new_trainning_review_path(booking), class: "btn-review"%>
+        <!--<p class="card-title">" <%#= trainning.description %> "</p>-->
+      <% end %>
+     </div>
+    </div>
+  </div>
+</div>
+
