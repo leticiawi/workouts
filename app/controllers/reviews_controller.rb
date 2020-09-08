@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+  def index
+    @review = Review.all
+    @trainning = Trainning.find(params[:trainning_id])
+  end
+
   def new
     @review = Review.new
     @trainning = Trainning.find(params[:trainning_id])
