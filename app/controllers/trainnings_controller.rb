@@ -19,6 +19,7 @@ class TrainningsController < ApplicationController
 
   def show
     @trainning = Trainning.find(params[:id])
+    @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
   end
 
   def new

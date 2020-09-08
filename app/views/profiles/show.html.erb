@@ -7,7 +7,7 @@
         <%= image_tag ("health.png")%><%= image_tag ("health.png")%><%= image_tag ("health.png")%><%= image_tag ("health.png")%><%= image_tag ("health.png")%>
         </div>
       <ul class="list-group">
-
+        <li class="list-group-item"><%= @orders_count %> bookings</li>
         <li class="list-group-item"><i class="fas fa-user-check"></i><%=" "%><%= @profile.user.name %></li>
         <li class="list-group-item"><i class="fas fa-address-card"></i><%=" "%><%= @profile.bio %></li>
         <li class="list-group-item"><%= image_tag ("age.png")%><%=" "%><%= @profile.age  %></li>

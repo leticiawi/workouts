@@ -5,6 +5,7 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
   end
 
   def create

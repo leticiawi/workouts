@@ -1,6 +1,6 @@
 <div class="container" id="select">
  <div class="container text-center border-bottom">
-    <h3><%= current_user.name %>'s trainning's detail:</h3>
+    <h3><%= current_user.name %>'s trainning's details:</h3>
   </div>
     <div class="row">
       <div class="col-12">
@@ -21,9 +21,9 @@
           <p class="card-title"><%= @trainning.duration %></p>
           <p class="card-title">Amount: <%= @trainning.price_cents/100 %> $</p>
           <p class="card-title">" <%= @trainning.description %> "</p>
-          <%= link_to "delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" } %>
-          <%= link_to "view all", trainer_index_path, class: "btn btn-primary btn-sm" %>
-          <%= link_to "edit", edit_trainning_path(@trainning), class: "btn btn-success btn-sm" %>
+          <%= link_to "Delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" } %>
+          <%= link_to "View All", trainer_index_path, class: "btn btn-primary btn-sm" %>
+          <%= link_to "Edit", edit_trainning_path(@trainning), class: "btn btn-success btn-sm" %>
           </div>
         </div>
         <%# end %>
