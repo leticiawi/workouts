@@ -13,14 +13,12 @@
         </div>
       <% end %>
     </div>
-    
-    <div class="container border-bottom my-3" id >
+    <div class="container border-bottom my-3 ">
       <div class="d-flex justify-content-between">
         <p class="weather"><%= "#{@weather["main"]["temp"]}°C" %></p>
         <%= image_tag "http://openweathermap.org/img/w/#{@weather["weather"].first["icon"]}.png", height: 75, width: 75%>
       </div>
     </div>
-
     <div class="container mt-5">
       <div class="container">
         <div class="d-flex justify-content-center">
