@@ -1,3 +1,4 @@
+require 'open_weather'
 class ProfilesController < ApplicationController
   def new
     @profile = Profile.new
@@ -33,7 +34,13 @@ class ProfilesController < ApplicationController
   def dashboard
     redirect_to root_path unless user_signed_in?
 
-    @markers = User.geocoded.map do |user|
+    
+    options = { units: "metric", APPID: "8469665ff40f18c1a4b511bf69e39942" }
+    lat,lon = current_user.geocode
+    @weather = OpenWeather::Current.geocode(lat, lon, options)
+    
+
+     @markers = User.geocoded.map do |user|
       {
         lat: user.latitude,
         lng: user.longitude,
