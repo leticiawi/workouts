@@ -4,8 +4,3 @@ class ChatroomChannel < ApplicationCable::Channel
     stream_for chatroom
   end
 end
-
-# tutorial
-  # def subscribed
-  #   stream_for "chatroom_#{params[:chatroom_id]}"
-  # end
