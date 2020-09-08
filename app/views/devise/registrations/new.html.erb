@@ -19,12 +19,12 @@
                   input_html: { autocomplete: "new-password" } %>
       <%= f.input :name %>
       <%= f.input :address %>
-      <%= f.input :photo, as: :file %>
+      <%#= f.input :photo, as: :file %>
       <%= f.input :trainer, as: :boolean %>
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
+      <%= f.button :submit, "Sign up", class: "btn btn-danger btn-sm" %>
     </div>
   <% end %>
 
