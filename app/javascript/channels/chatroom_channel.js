@@ -21,3 +21,10 @@ consumer.subscriptions.create({ channel: "ChatroomChannel", id: id }, {
 });
 
 export { initChatroomCable };
+
+// tutorial
+// class ChatRoomsChannel < ApplicationCable::Channel
+//   def subscribed
+//     stream_from "chat_room_#{params[:chat_room_id]}"
+//   end
+// end

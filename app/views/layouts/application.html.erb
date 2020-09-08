@@ -20,9 +20,13 @@
     <%= render 'shared/flashes' %>
     <!-- Crio uma partial do index? -->
     <div class="<%= 'main-container' if user_signed_in? %>">
-      <%= yield %>
     </div>
     <% if user_signed_in? %>
+
+      <%= yield %>
+      <%= javascript_include_tag 'application' %>
+      <%= yield :after_js %>
+
       <div class="footer fixed-bottom">
         <div class="footer-links">
             <% if current_user.profile%>
