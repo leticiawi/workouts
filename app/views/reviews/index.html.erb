@@ -3,10 +3,20 @@
     <h3>Reviews</h3>
   </div>
     <div class="row">
-      <% @trainning.reviews.each do |review| %>
-        <%= review.rating %>
-        <%= review.content %>
-        <%= review.user.name %>
+      <% if @trainning.reviews.present? %>
+        <% @trainning.reviews.each do |review| %>
+          <% rating = @profile.user.average_rating %>
+            <% rating.times do %>
+              <span class="star_rating"><%= "\u2605" %></span>
+            <% end %>
+            <% (5 - rating).times do %>
+              <span class="empty_star_rating">☆</span>
+            <% end %>
+          <p class="card-title"><%= review.content %></p>
+          <p class="card-title"><%= review.user.name %></p>
+        <% end %>
+      <% else %>
+        <span>This trainning has no reviews yet, be the first to leave a comment!</span>
       <% end %>
     </div>
 </div>
