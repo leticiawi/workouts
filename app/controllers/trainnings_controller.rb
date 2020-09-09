@@ -3,7 +3,7 @@ class TrainningsController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @trainnings = Trainning.geocoded.where.not(user: current_user)
+    @trainnings = Trainning.geocoded.where.not(user: current_user, active: false)
     @category_id = params[:category_id]
     if params[:category_id]
       #User.where("user != current_use AND category_id: @category_id ")
@@ -65,7 +65,7 @@ class TrainningsController < ApplicationController
 
   def destroy
     @trainning = Trainning.find(params[:id])
-    @trainning.destroy
+    @trainning.update(active: false)
     redirect_to trainer_index_path
   end
 

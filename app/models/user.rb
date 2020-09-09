@@ -11,8 +11,10 @@ class User < ApplicationRecord
   validates :address, :name, presence: true, on: :update
   has_one_attached :photo
   has_one :profile, dependent: :destroy
+  validates :address, presence: true
   # phone
 
+  has_many :messages, dependent: :destroy
   # geocoder info
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

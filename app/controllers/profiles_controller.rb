@@ -43,6 +43,7 @@ class ProfilesController < ApplicationController
     icons = JSON.parse(json)
     @weather_class = icons[weather_id.to_s]["icon"]
 
+
      @markers = User.geocoded.map do |user|
       {
         lat: user.latitude,

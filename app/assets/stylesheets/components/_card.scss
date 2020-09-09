@@ -241,12 +241,19 @@ h4 {
 }
 
 .weather {
-  margin-top: -10px;
-  margin-left: 12px;
-  font-size: 40px;
-  color: #353f50;
-  font-weight: 600;
-  font-family: 'Orbitron', sans-serif;
+  margin-top: 8px;
+  font-size: 30px;
+  color: rgb(78, 88, 105);
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.weather-trainner {
+  margin-top: 8px;
+  font-size: 30px;
+  color: white;
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .card-product {
