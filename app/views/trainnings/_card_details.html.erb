@@ -30,22 +30,14 @@
         <%= hidden_field_tag 'trainning_id', @trainning.id %>
         <%= submit_tag 'Book Now', class: 'btn btn-danger btn-sm' %>
         <% end %>
-
+        <%= link_to "Chat with Trainer", chatrooms_path(trainer_id: @trainning.user.id), method: :post, class: "btn btn-primary btn-sm" %>
         <% if @trainning.user.profile %>
           <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-success btn-sm btn-block" %>
         <% end %>
           <%= link_to "Back To All Trainnings", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
-        <%# if @trainning tiver order paid %>
+
           <%= link_to "Add a Review", new_trainning_review_path(@trainning), class: "btn btn-primary btn-sm" %>
-        <%# end %>
-        <%# if tiver review, mostra num container %>
-          <%# @trainning.reviews.each do |review| %>
-            <%#= review.rating %>
-            <%#= review.content %>
-            <%#= review.user.name %>
-          <%# end %>
-        <%# end %>
-        <%#= link_to "Book Now", checkout_path(trainning_id: @trainning.id), class: "btn btn-danger btn-sm" %>
+
       </div>
     </div>
   </div>
