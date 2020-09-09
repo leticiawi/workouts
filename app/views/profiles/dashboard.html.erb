@@ -4,7 +4,7 @@
       <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h6>Where do you want to train today?</h6>
     </div>
 
-    <%= simple_form_for :search, url: trainnings_path, method: :get do |f|%>
+    <%= simple_form_for :search, url: trainnings_path, id: 'search_address', method: :get do |f|%>
       <%= f.input :address, class: "input-form" %>
       <%= f.submit :search, class: "submit"%>
     <% end %>
