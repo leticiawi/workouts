@@ -6,13 +6,20 @@
       <h5>Ready for today´s challenges?</h5>
     </div>
   </div>
-    <div class="container adjust-height">
+
 
     <div class="banner-trainer" style='background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1520774779505-a7782b3fb733?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80);'>
       <div class="container pb-5">
+
         <div class="image">
           <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
         </div>
+        <div class="container my-3 ">
+      <div class="d-flex justify-content-between">
+        <p class="weather-trainner"><%= "#{@weather["main"]["temp"]}°C" %></p>
+        <%= image_tag "http://openweathermap.org/img/w/#{@weather["weather"].first["icon"]}.png", height: 75, width: 75%>
+      </div>
+    </div>
       </div>
 
       <div class="container">
@@ -25,7 +32,7 @@
          <%# end %>
 
       <div class="container">
-        <div class="d-flex justify-content-center pt-5">
+        <div class="d-flex justify-content-center">
             <div class="row">
               <div class="col-6">
                 <%= link_to "All Trainnings", trainnings_path, class: "btn-profile"%>
@@ -56,7 +63,6 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
 
 
