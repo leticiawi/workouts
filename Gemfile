@@ -33,6 +33,9 @@ gem 'devise'
 gem 'geocoder'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
+gem "algoliasearch-rails"
+
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
