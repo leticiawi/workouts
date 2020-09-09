@@ -35,13 +35,13 @@ class ProfilesController < ApplicationController
     redirect_to root_path unless user_signed_in?
 
 
-    options = { units: "metric", APPID: "8469665ff40f18c1a4b511bf69e39942" }
-    lat,lon = current_user.geocode
-    @weather = OpenWeather::Current.geocode(lat, lon, options)
-    weather_id = @weather["weather"].first["id"]
-    json = File.read(Rails.root.join("lib", "assets", "icons.json"))
-    icons = JSON.parse(json)
-    @weather_class = icons[weather_id.to_s]["icon"]
+    #options = { units: "metric", APPID: "8469665ff40f18c1a4b511bf69e39942" }
+    #lat,lon = current_user.geocode
+    #@weather = OpenWeather::Current.geocode(lat, lon, options)
+    #weather_id = @weather["weather"].first["id"]
+    #json = File.read(Rails.root.join("lib", "assets", "icons.json"))
+    #icons = JSON.parse(json)
+    #@weather_class = icons[weather_id.to_s]["icon"]
 
 
      @markers = User.geocoded.map do |user|

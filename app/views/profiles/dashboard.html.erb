@@ -13,12 +13,7 @@
         </div>
       <% end %>
     </div>
-    <div class="container border-bottom my-3 ">
-      <div class="d-flex justify-content-between">
-        <p class="weather"><%= "#{@weather["main"]["temp"]}°C" %></p>
-        <i class="weather-icon wi wi-day-<%= @weather_class %>"></i>
-      </div>
-    </div>
+
     <div class="container mt-5">
       <div class="container">
         <div class="d-flex justify-content-center">
@@ -30,18 +25,12 @@
         <div class="container">
           <div class="d-flex justify-content-center">
             <div class="row">
-              <div class="col-6">
+              <div class="col-12">
                 <%#= link_to :Trainnings, trainnings_path, class: "btn-profile"%>
-                <%= link_to :Trainnings, categories_path, class: "btn-profile"%>
+                <%= link_to :Trainnings, categories_path, class: "btn-profile-dashboard"%>
               </div>
-              <div class="col-6">
-                <li class="btn-profile">Edit profile</li>
-              </div>
-              <div class="col-6">
-                <li class="btn-profile">Add Review</li>
-              </div>
-              <div class="col-6">
-                <%= link_to "My Bookings", orders_path, class: "btn-profile"%>
+              <div class="col-12">
+                <%= link_to "My Bookings", orders_path, class: "btn-profile-dashboard"%>
               </div>
             </div>
           </div>

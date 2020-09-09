@@ -86,7 +86,7 @@ h4 {
   margin-top: 5px;
   background-size: cover;
   background-position: center;
-  height: 130px;
+  height: 158px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -117,6 +117,7 @@ h4 {
   margin-top: 20px;
   margin-left: 45px;
   border-radius: 8px;
+  align-content: center;
 }
 
 .card-title {
@@ -226,7 +227,7 @@ h4 {
   margin-bottom: 70px;
 }
  .main-container {
-   margin-bottom: 150px;
+   margin-bottom: 130px;
  }
 
  a {
@@ -240,21 +241,6 @@ h4 {
   height: 100px;
 }
 
-.weather {
-  margin-top: 8px;
-  font-size: 30px;
-  color: rgb(78, 88, 105);
-  font-weight: 400;
-  font-family: 'IBM Plex Sans', sans-serif;
-}
-
-.weather-trainner {
-  margin-top: 8px;
-  font-size: 30px;
-  color: white;
-  font-weight: 400;
-  font-family: 'IBM Plex Sans', sans-serif;
-}
 
 .card-product {
   overflow: hidden;
@@ -289,9 +275,30 @@ h4 {
   padding: 16px;
 }
 
-.weather-icon{
-  font-size: 50px;
-  color: rgb(51, 103, 161);
-  
+.weather {
+  margin-top: 0px;
+  font-size: 32px;
+  color: rgb(78, 88, 105);
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
+.weather-icon{
+  margin-top: 5px;
+  font-size: 45px;
+  color: rgb(40, 89, 146); 
+}
+
+.weather-trainer {
+  margin-top: 0px;
+  font-size: 32px;
+  color: white;
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.weather-trainer-icon{
+  margin-top: 5px;
+  font-size: 45px;
+  color: rgb(255, 255, 255); 
+}
