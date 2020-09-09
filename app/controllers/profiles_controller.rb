@@ -40,6 +40,7 @@ class ProfilesController < ApplicationController
     @weather = OpenWeather::Current.geocode(lat, lon, options)
 
 
+
      @markers = User.geocoded.map do |user|
       {
         lat: user.latitude,
