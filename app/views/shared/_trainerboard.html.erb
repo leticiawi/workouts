@@ -62,9 +62,11 @@
           </div>
             <div class="container border mt-5">
               <div class="game-box">
-                <h6>Flashlight count:</h6>
-                <% @orders_count.times do %>
-                <i class="fas fa-meteor fa-lg"></i>
+                <% unless orders_count.nil? %>
+                  <h6>Flashlight count:</h6>
+                  <% @orders_count.times do %>
+                  <i class="fas fa-meteor fa-lg"></i>
+                  <% end %>
                 <% end %>
               </div>
           </div>
