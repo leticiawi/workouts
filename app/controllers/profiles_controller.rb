@@ -33,8 +33,10 @@ class ProfilesController < ApplicationController
 
   def dashboard
     redirect_to root_path unless user_signed_in?
-
-
+    @profile = Profile.find_by(user: current_user)
+    unless @profile.nil?
+      @orders_count = Order.where(trainning_id: @profile.user, state: "pending").count
+    end
     options = { units: "metric", APPID: "8469665ff40f18c1a4b511bf69e39942" }
     lat,lon = current_user.geocode
     @weather = OpenWeather::Current.geocode(lat, lon, options)
@@ -52,7 +54,6 @@ class ProfilesController < ApplicationController
         image_url: helpers.asset_url('https://br.freepik.com/icones-gratis/mao-com-um-haltere_733843.htm')
       }
     end
-    @profile = Profile.find_by(user: current_user)
   end
 
   private

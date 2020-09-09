@@ -11,7 +11,6 @@
 
         <li class="list-group-item">
           <% if @profile.user.reviews.present? %>
-              <% rating = @profile.user.average_rating %>
               <% rating.times do %>
                 <span class="star_rating"><%= "\u2605" %></span>
               <% end %>
@@ -22,7 +21,6 @@
               <span>Trainer has no reviews yet.</span>
             <% end %>
         </li>
-        <li class="list-group-item"><%= @orders_count %> bookings</li>
         <li class="list-group-item"><i class="fas fa-user-check"></i><%=" "%><%= @profile.user.name %></li>
         <li class="list-group-item"><i class="fas fa-address-card"></i><%=" "%><%= @profile.bio %></li>
         <li class="list-group-item"><%= image_tag ("age.png")%><%=" "%><%= @profile.age  %></li>

@@ -35,30 +35,38 @@
         <div class="d-flex justify-content-center">
             <div class="row">
               <div class="col-6">
-                <%= link_to "All Trainnings", trainnings_path, class: "btn-profile"%>
+                <%= link_to "All Trainnings", trainnings_path, class: "btn-profile-dash"%>
               </div>
               <div class="col-6">
-                <%= link_to "My Trainnings", trainer_index_path, class: "btn-profile"%>
+                <%= link_to "My Trainnings", trainer_index_path, class: "btn-profile-dash"%>
               </div>
               <div class="col-6">
-                <%= link_to "Add Trainning", new_trainning_path, class: "btn-profile"%>
+                <%= link_to "Add Trainning", new_trainning_path, class: "btn-profile-dash"%>
               </div>
               <div class="col-6">
-                <%= link_to "Bookings", orders_path, class: "btn-profile"%>
+                <%= link_to "Bookings", orders_path, class: "btn-profile-dash"%>
               </div>
               <% if current_user.profile%>
                 <div class="col-6">
-                  <%= link_to "Profile", profile_path(profile), class: "btn-profile"%>
+                  <%= link_to "Profile", profile_path(profile), class: "btn-profile-dash"%>
                 </div>
                 <div class="col-6">
-                  <%= link_to "EditProfile", edit_profile_path(profile), class: "btn-profile"%>
+                  <%= link_to "EditProfile", edit_profile_path(profile), class: "btn-profile-dash"%>
                 </div>
               <% else %>
                 <div class="col-6">
-                  <%= link_to "Create Profile", new_profile_path, class: "btn-profile"%>
+                  <%= link_to "Create Profile", new_profile_path, class: "btn-profile-dash"%>
                 </div>
               <% end %>
             </div>
+          </div>
+            <div class="container border mt-5">
+              <div class="game-box">
+                <h6>Flashlight count:</h6>
+                <% @orders_count.times do %>
+                <i class="fas fa-meteor fa-lg"></i>
+                <% end %>
+              </div>
           </div>
         </div>
       </div>

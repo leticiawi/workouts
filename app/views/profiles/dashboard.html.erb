@@ -9,7 +9,7 @@
         <div class="d-flex align-items-baseline">
           <i class="fas fa-map-marker-alt fa-2x"></i>
         <%= f.input :address, placeholder: "Address", class: "input-form", label: false %>
-        <%= f.submit :search, class: "submit"%>
+        <%= f.submit :Search, class: "submit"%>
         </div>
       <% end %>
     </div>
@@ -30,19 +30,22 @@
         <div class="container">
           <div class="d-flex justify-content-center">
             <div class="row">
-              <div class="col-6">
+              <div class="col-12">
+                <div class="container border-bottom my-2 p-3">
+                  <h6>Let´s get moving?</h6>
                 <%#= link_to :Trainnings, trainnings_path, class: "btn-profile"%>
-                <%= link_to :Trainnings, categories_path, class: "btn-profile"%>
+                <%= link_to :Trainnings, categories_path, class: "btn-profile-dashboard"%>
               </div>
-              <div class="col-6">
-                <li class="btn-profile">Edit profile</li>
               </div>
-              <div class="col-6">
-                <li class="btn-profile">Add Review</li>
+
+              <div class="col-12">
+                <div class="container border-bottom my-2 p-3 ">
+                <h6> Rate your experience:</h6>
+                <%= link_to "My Bookings", orders_path, class: "btn-profile-dashboard"%>
               </div>
-              <div class="col-6">
-                <%= link_to "My Bookings", orders_path, class: "btn-profile"%>
               </div>
+
+
             </div>
           </div>
             <%#= link_to "Register as personal trainer!", new_user_session_path, class: "btn btn-primary" %>
@@ -51,7 +54,8 @@
     </div>
   </div>
 <% else %>
-  <%= render 'shared/trainerboard', profile: @profile %>
+
+  <%= render 'shared/trainerboard', profile: @profile, orders_count: @orders_count %>
 <% end  %>
 
 
