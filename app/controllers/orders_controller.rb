@@ -3,7 +3,6 @@ before_action :set_order, except: :index
 
   def show
   @order = current_user.orders.find(params[:id])
-
   end
 
   def index

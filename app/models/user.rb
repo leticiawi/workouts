@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :address, :name, presence: true, on: :update
   has_one_attached :photo
   has_one :profile, dependent: :destroy
+  validates :address, presence: true
   # phone
 
   # geocoder info
