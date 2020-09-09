@@ -14,10 +14,10 @@
         <div class="image">
           <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
         </div>
-        <div class="container my-3 ">
+        <div class="container border-bottom my-3 ">
       <div class="d-flex justify-content-between">
         <p class="weather-trainner"><%= "#{@weather["main"]["temp"]}°C" %></p>
-        <%= image_tag "http://openweathermap.org/img/w/#{@weather["weather"].first["icon"]}.png", height: 75, width: 75%>
+        <i class="weather-icon-trainer wi wi-day-<%= @weather_class %>"></i>
       </div>
     </div>
       </div>
