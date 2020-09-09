@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+
   def index
     @review = Review.all
     @trainning = Trainning.find(params[:trainning_id])
@@ -15,7 +16,7 @@ class ReviewsController < ApplicationController
     @review.trainning = @trainning
     @review.user = current_user
     if @review.save
-      redirect_to @trainning
+      redirect_to trainning_reviews_path(@trainning)
     else
       flash[:alert] = "Something went wrong."
       render :new
