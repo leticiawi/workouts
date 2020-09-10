@@ -1,17 +1,23 @@
 <div class="container" id="select">
   <div class="container text-center border-bottom">
-    <h3>Update your profile:</h3>
+    <h3>Update your Profile:</h3>
   </div>
-  <ul class="list-group">
+
+  <div class="container">
+
     <%= simple_form_for @profile do |f| %>
       <%= f.input :user_id, as: :hidden %>
-      <li class="list-group-item"><%= f.input :speciality %></li>
-      <li class="list-group-item"><%= f.input :bio %></li>
-      <li class="list-group-item"><%= f.input :age %></li>
-      <li class="list-group-item"><%= f.input :certifications %></li>
-      <li class="list-group-item"><%= f.input :achievments %></li>
-      <li class="list-group-item"><%= f.input :photo, as: :file %></li>
-      <%= f.submit 'Save Changes', class: 'btn btn-info btn-block' %>
+        <%= f.input :speciality %></li>
+        <%= f.input :bio %></li>
+        <%= f.input :age %></li>
+        <%= f.input :certifications %></li>
+        <%= f.input :achievments %></li>
+        <div class="container">
+          <%= f.input :photo, as: :file %></li>
+          <%= f.submit 'Save Changes', class: 'btn btn-info btn-block' %>
+      </div>
     <% end %>
-  </ul>
+
+  </div>
+
 </div>
