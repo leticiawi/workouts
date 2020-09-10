@@ -20,6 +20,18 @@
             <span class="empty_star_rating">☆</span>
         <% end %>
         </p>
+
+
+          <% if @orders_count <= 10 %>
+            <p class="card-title">New Workouter<i class="fas fa-user-astronaut"></i></p>
+          <% elsif @oders_count > 10 && @orders_count < 20  %>
+            <p class="card-title">Super Workouter<i class="fas fa-user-astronaut"></i></p>
+          <% else %>
+            <p class="card-title">Top Workouter<i class="fas fa-globe-americas"></i></p>
+          <% end %>
+
+
+        <p class="card-title"><%= @orders_count %> bookings</p>
         <p class="card-title"><i class="fas fa-user-check"></i><%=" "%><%= @trainning.user.name.capitalize! %></p>
         <p class="card-title"><%= image_tag ("gym.png")%><%=" "%><%= @trainning.category.name %></p>
         <p class="card-title"><i class="far fa-clock"></i></i><%=" "%><%= @trainning.duration %></p>
@@ -35,8 +47,6 @@
           <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-success btn-sm btn-block" %>
         <% end %>
           <%= link_to "Back To All Trainnings", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
-
-          <%= link_to "Add a Review", new_trainning_review_path(@trainning), class: "btn btn-primary btn-sm" %>
 
       </div>
     </div>

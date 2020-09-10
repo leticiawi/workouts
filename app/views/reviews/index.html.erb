@@ -3,11 +3,19 @@
     <h3>Reviews:</h3>
     <em><h5>Trainning´s average rating: (<%= @trainning.average_rating %>)</h5></em>
   </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   <div class="container my-3">
     <div class="row">
       <% if @trainning.reviews.present? %>
       <div class="container">
         <% @trainning.reviews.each do |review| %>
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         <div class="container-ratings">
           <% rating = review.rating %>
             <% rating.times do %>
@@ -19,10 +27,20 @@
           <p class="card-title"><%= review.content %> <br>
             <strong><%= review.user.name %></strong>
           </p>
+<<<<<<< HEAD
         <% end %>
         </div>
       <% else %>
       </div>
+=======
+
+        <% end %>
+
+        </div>
+      <% else %>
+      </div>
+
+>>>>>>> master
         <span>This trainning has no reviews yet, be the first to leave a comment!</span>
       <% end %>
       </div>
