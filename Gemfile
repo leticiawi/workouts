@@ -40,6 +40,12 @@ gem 'devise'
 gem 'geocoder'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
+gem 'algoliasearch-rails' # provides AlgoliaSearch rails integration
+                          #  + AlgoliaSearch JS Client
+                          #  +  patched typeahead.js
+gem 'jquery-rails'
+gem 'hogan_assets'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
