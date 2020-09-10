@@ -1,0 +1,7 @@
+<h1>Index de Chat</h1>
+
+<ul>
+  <% @chatrooms.each do |chatroom| %>
+    <li><%= link_to "Chat com #{chatroom.user.name}", chatroom_path(chatroom) %></li>
+  <% end %>
+</ul>
