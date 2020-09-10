@@ -53,7 +53,7 @@ a {
   width: 50px;
   height: 50px;
   margin-right: auto;
-  margin-top: -20px;
+
 }
 
 
@@ -86,14 +86,14 @@ h4 {
   margin-top: 5px;
   background-size: cover;
   background-position: center;
-  height: 130px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 25px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -115,7 +115,7 @@ h4 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 1px;
   margin-top: 20px;
-  margin-left: 45px;
+  margin-left: 30px;
   border-radius: 8px;
 }
 
@@ -131,7 +131,6 @@ h4 {
 
 .card-body {
   text-align: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   letter-spacing: 1px;
   margin-bottom: 1px;
   padding: 11px;
@@ -208,7 +207,7 @@ h4 {
 }
 
 .fa-trophy{
-  color: rgb(255, 208, 0);
+  color: black;
   font-size: 20px;
 }
 
@@ -263,6 +262,7 @@ h4 {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 3px;
 }
 
 .card-product img {
@@ -289,4 +289,13 @@ h4 {
   padding: 16px;
 }
 
+.weather-icon{
+  font-size: 50px;
+  color: rgb(51, 103, 161);
 
+}
+
+.weather-icon-trainer {
+  color:white;
+  font-size: 50px;
+}

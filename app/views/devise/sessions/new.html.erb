@@ -3,7 +3,9 @@
 <div class="container adjust-height">
 
   <div class="container" id="select">
-    <h3 id="login-big">Log in</h3>
+    <div class="container text-center border-bottom">
+      <h3>Log in</h3>
+    </div>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,

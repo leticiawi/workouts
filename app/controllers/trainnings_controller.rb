@@ -3,10 +3,10 @@ class TrainningsController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @trainnings = Trainning.geocoded.where.not(user: current_user)
+    @trainnings = Trainning.geocoded.where(category_id: params[:category_id], active: true)
     @category_id = params[:category_id]
     if params[:category_id]
-      #User.where("user != current_use AND category_id: @category_id ")
+      User.where("user != current_use AND category_id: @category_id ")
       @trainnings
     elsif params[:search]
       @trainnings = @trainnings.near(params[:search][:address], 15)
@@ -24,8 +24,8 @@ class TrainningsController < ApplicationController
 
   def show
     @trainning = Trainning.find(params[:id])
-    @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
-    @profile = current_user.profile
+    @orders_count = Order.where(trainning: @trainning, state: "pending").count
+    @profile = @trainning.user.profile
   end
 
   def new
@@ -65,7 +65,7 @@ class TrainningsController < ApplicationController
 
   def destroy
     @trainning = Trainning.find(params[:id])
-    @trainning.destroy
+    @trainning.update(active: false)
     redirect_to trainer_index_path
   end
 
