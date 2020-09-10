@@ -5,15 +5,31 @@ Rails.application.routes.draw do
     resources :trainnings, only: [:index]
   end
 
-  resources :profiles, only: [:new, :create, :update, :destroy, :show]
+  resources :trainnings do
+    resources :reviews, only: [:create, :new, :index]
+  end
+
+  resources :profiles, only: [:new, :create, :update, :edit, :show]
+
+  resources :orders, only: [:show, :create, :index] do
+    resources :payments, only: :new
+  end
+
+  resources :chatrooms, only: [:show, :create] do
+    resources :messages, only: :create
+  end
 
   get "dashboard", to: "profiles#dashboard"
   get "trainer_board", to: "profiles#dashboard"
-  resources :trainnings
   get "trainer_index", to: "trainnings#trainer_index"
   get "trainer_show/:id", to: "trainnings#trainer_show", as: "trainer_show"
   get "checkout", to: "pages#checkout"
 
   root to: 'pages#home'
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
+
+  mount ActionCable.server => "/cable"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+

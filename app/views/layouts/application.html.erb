@@ -5,6 +5,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,700&family=Open+Sans+Condensed:wght@300;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -12,7 +16,6 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
@@ -20,25 +23,46 @@
     <%= yield %>
   </body>
 
+  <% if user_signed_in? %>
+    <div class="footer fixed-bottom">
+      <div class="footer-links">
+          <a href="#"><i class="fas fa-home"></i></a>
+          <a href="#"><i class="fas fa-dumbbell"></i></a>
+          <%= link_to root_path, class: "logo-home" do %>
+          <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png" %>
+          <% end %>
+          <a href="#"><i class="far fa-comments"></i></a>
+          <%= button_to destroy_user_session_path, method: :delete, class: "logout-icon" do %>
+            <i class="fas fa-sign-out-alt"></i>
+          <% end %>
+        <% end %>
+      <div class="<%= 'main-container' if user_signed_in? %>">
+        <%= yield %>
+      </div>
       <% if user_signed_in? %>
-  <div class="footer fixed-bottom">
-    <div class="footer-links">
-        <a href="#"><i class="fas fa-home"></i></a>
-        <a href="#"><i class="fas fa-dumbbell"></i></a>
-        <%= link_to root_path, class: "logo-home" do %>
-        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png" %>
-        <% end %>
-        <a href="#"><i class="far fa-comments"></i></a>
-        <%= button_to destroy_user_session_path, method: :delete, class: "logout-icon" do %>
-          <i class="fas fa-sign-out-alt"></i>
-        <% end %>
-      <% end %>
-
-    </div>
-  </div>
-
-
-
+        <div class="footer fixed-bottom">
+          <div class="footer-links">
+              <% if current_user.profile%>
+                  <%= link_to profile_path(current_user.profile)  do %>
+                    <i class="far fa-user-circle"></i>
+                  <% end %>
+                  <% else %>
+                  <%= link_to new_profile_path do %>
+                    <i class="far fa-user-circle"></i>
+                  <% end %>
+              <% end %>
+            <%= link_to categories_path, class: "btn-trainning" do%>
+              <i class="fas fa-dumbbell"></i></a>
+            <% end  %>
+            <%= link_to root_path, class: "logo-home" do %>
+              <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png" %>
+            <% end %>
+              <a href="#"><i class="far fa-comments"></i></a>
+            <%= button_to destroy_user_session_path, method: :delete, class: "logout-icon", data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-sign-out-alt"></i>
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+  </body>
 </html>
-
-

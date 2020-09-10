@@ -1,0 +1,35 @@
+<div class="container" id="select">
+  <div class="container border-bottom">
+    <h3>Reviews:</h3>
+    <em><h5>Trainning´s average rating: (<%= @trainning.average_rating %>)</h5></em>
+  </div>
+
+  <div class="container my-3">
+    <div class="row">
+      <% if @trainning.reviews.present? %>
+      <div class="container">
+        <% @trainning.reviews.each do |review| %>
+
+        <div class="container-ratings">
+          <% rating = review.rating %>
+            <% rating.times do %>
+              <span class="star_rating"><%= "\u2605" %></span>
+            <% end %>
+            <% (5 - rating).times do %>
+              <span class="empty_star_rating">☆</span>
+            <% end %>
+          <p class="card-title"><%= review.content %> <br>
+            <strong><%= review.user.name %></strong>
+          </p>
+
+        <% end %>
+
+        </div>
+      <% else %>
+      </div>
+
+        <span>This trainning has no reviews yet, be the first to leave a comment!</span>
+      <% end %>
+      </div>
+    </div>
+</div>

@@ -5,6 +5,13 @@
   padding: 55px 0;
 }
 
+.banner-trainer {
+  background-size: cover;
+  background-position: center;
+  padding: 55px 0;
+  height: 560px;
+}
+
 .banner h1 {
   margin: 0;
   color: white;
@@ -28,13 +35,32 @@
 }
 
 
-.container.ctnr-ban{
-  margin-top: 400px;
+.container.ctnr-ban {
+  margin-top: 320px;
 }
 
-.background-text-card{
+.background-text-card h1{
  padding-top: 100px;
+}
+ #banner-h {
+  font-family: 'Merriweather Sans', sans-serif ;
+ }
 
+ #login-big {
+   margin-left: 120px;
+   font-size: 35px;
+ }
+
+head {
+  background: white;
 }
 
+body {
+  background: white;
+}
 
+.container-ratings {
+
+background-color: #f7e8f0;
+margin-bottom: 5px;
+}

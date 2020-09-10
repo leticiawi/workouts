@@ -2,6 +2,10 @@
   margin-top: 15px;
 }
 
+a {
+   color: white; text-decoration: none; background-color: transparent;
+ }
+
 .card-trip {
   overflow: hidden;
   background: white;
@@ -44,16 +48,14 @@
 
 
 .image img {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
   display: block;
   border-radius: 25%;
-  width: 150px;
-  height: 144px;
+  width: 50px;
+  height: 50px;
+  margin-right: auto;
 
 }
+
 
 #username {
   color: rgb(51, 51, 51);
@@ -84,48 +86,56 @@ h4 {
   margin-top: 5px;
   background-size: cover;
   background-position: center;
-  height: 130px;
+  height: 160px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 25px;
   font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-trainning{
-width:150px;
-height :200px;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
-padding: 1px;
-margin-bottom: 3px;
-
+.card-trainning {
+  margin-top: 15px;
+  width: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  margin-bottom: 3px;
 }
 
-.card-trainning-detail{
-width:250px;
-height :250px;
-box-shadow: 0 0 10px rgba(0,0,0,0.2);
-padding: 1px;
-margin-bottom: 3px;
-
+.p-1 {
+  padding: 0.75rem !important;
 }
 
-.card-body {
-text-align: center;
-text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-letter-spacing: 1px;
-margin-bottom: 1px;
-padding: 5px;
+.trainning-details {
+  width: 325px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 1px;
+  margin-top: 20px;
+  margin-left: 30px;
+  border-radius: 8px;
 }
 
 .card-title {
-font-size: 13px;
-margin-bottom: 1px;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(90, 90, 90, 0.267);
 }
+
+#title-size {
+  font-size: 15px;
+}
+
+.card-body {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 1px;
+  padding: 11px;
+}
+
 
 #trainnings {
   text-align: center;
@@ -137,8 +147,7 @@ margin-bottom: 1px;
 }
 
 #select {
-  margin-top: 70px;
-
+  margin-top: 30px;
 }
 
 #text-big {
@@ -146,11 +155,24 @@ margin-bottom: 1px;
 }
 
 .profile-img {
-  width: 302px;
-  height: 300px;
-  margin-left: 25px;
-  border-radius: 5px;
+
+  width: 250px;
+  height: 220px;
+  margin-left: 65px;
+  border-radius: 35px;
+
+ // margin-right: 45px;
+  //border-radius: 5px;
+
 }
+
+.profile-img-test {
+     width: 500px;
+     height: 500px;
+     background-position: 50% 50%;
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
 
 .fa-star {
   font-size: 20px;
@@ -161,14 +183,119 @@ margin-bottom: 1px;
 }
 
 .list-group-item {
-  background: rgba(235, 234, 234, 0.301);
+  background: rgba(255, 255, 255, 0.301);
+  border: 0px;
 }
 
-.list-group{ 
+.list-group{
+  margin-bottom: 70px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 1px 2px 6px #475969b2;
+}
+
+.stars {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 55px;
+  width: 300px;
+}
+
+
+#home-infos {
+  margin-bottom: 100px;
+}
+
+.fa-trophy{
+  color: black;
+  font-size: 20px;
+}
+
+.fa-user-check{
+  color: black;
+  font-size: 20px;
+}
+
+.fa-address-card{
+  color: black;
+  font-size: 20px;
+}
+
+.margin-bottom {
   margin-bottom: 70px;
 }
- .stars {
-   margin-top: 5px;
-   width: 150px;
-   height: 30px;
+ .main-container {
+   margin-bottom: 150px;
  }
+
+ a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.board-photo {
+  width: 100px;
+  height: 100px;
+}
+
+.weather {
+  margin-top: 8px;
+  font-size: 30px;
+  color: rgb(78, 88, 105);
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.weather-trainner {
+  margin-top: 8px;
+  font-size: 30px;
+  color: white;
+  font-weight: 400;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 150px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 15px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.weather-icon{
+  font-size: 50px;
+  color: rgb(51, 103, 161);
+
+}
+
+.weather-icon-trainer {
+  color:white;
+  font-size: 50px;
+}

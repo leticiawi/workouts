@@ -1,10 +1,13 @@
+require 'open_weather'
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:show, :update, :edit]
+
   def new
     @profile = Profile.new
   end
 
   def show
-    @profile = Profile.find(params[:id])
+    @orders_count = Order.where(trainning_id: params[:id], state: "pending").count
   end
 
   def create
@@ -18,12 +21,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
   end
 
   def update
     if @profile.update(profile_params)
-      redirect_to dashboard_path
+      redirect_to profile_path(@profile)
     else
       render :edit
     end
@@ -31,8 +33,20 @@ class ProfilesController < ApplicationController
 
   def dashboard
     redirect_to root_path unless user_signed_in?
+    @profile = Profile.find_by(user: current_user)
+    unless @profile.nil?
+      @orders_count = Order.where(trainning_id: @profile.user, state: "pending").count
+    end
+    options = { units: "metric", APPID: "8469665ff40f18c1a4b511bf69e39942" }
+    lat,lon = current_user.geocode
+    @weather = OpenWeather::Current.geocode(lat, lon, options)
+    weather_id = @weather["weather"].first["id"]
+    json = File.read(Rails.root.join("lib", "assets", "icons.json"))
+    icons = JSON.parse(json)
+    @weather_class = icons[weather_id.to_s]["icon"]
 
-    @markers = User.geocoded.map do |user|
+
+     @markers = User.geocoded.map do |user|
       {
         lat: user.latitude,
         lng: user.longitude,
@@ -40,10 +54,13 @@ class ProfilesController < ApplicationController
         image_url: helpers.asset_url('https://br.freepik.com/icones-gratis/mao-com-um-haltere_733843.htm')
       }
     end
-    @profile = Profile.find_by(user: current_user)
   end
 
   private
+
+  def set_profile
+    @profile = Profile.find(params[:id])
+  end
 
   def profile_params
     params.require(:profile).permit(:name, :address, :photo, :age, :speciality, :bio, :certifications, :achievments, :user_id)

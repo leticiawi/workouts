@@ -1,21 +1,32 @@
-
-
-
 <div class="container" id="select">
   <div class="container">
-    <%= cl_image_tag @profile.photo.key, height:300, width:355, crop: :fill, class: "profile-img" %>
-      <div class="container stars">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-        </div>
+    <%#= cl_image_tag @profile.photo.key, height:300, width:355, crop: :fill, class: "profile-img" %>
+    <%= cl_image_tag(@profile.photo.key, height:300, width:355, crop: :thumb, gravity: :face) %>
+
+    <% if current_user != @profile.user  %>
+      <%= link_to "Back", trainnings_path, class: "btn btn-ghost" %>
+    <% end %>
+
       <ul class="list-group">
 
-        <li class="list-group-item"><%= @profile.user.name.capitalize! %></li>
-        <li class="list-group-item">Bio:<%= @profile.bio %></li>
-        <li class="list-group-item">Age: <%= @profile.age  %></li>
-        <li class="list-group-item">Achievments:<%= @profile.achievments %></li>
-        <li class="list-group-item">Certifications:<%= @profile.certifications  %></li>
+        <li class="list-group-item">
+          <% if @profile.user.reviews.present? %>
+              <% rating.times do %>
+                <span class="star_rating"><%= "\u2605" %></span>
+              <% end %>
+              <% (5 - rating).times do %>
+                <span class="empty_star_rating">☆</span>
+              <% end %>
+            <% else %>
+              <span>Trainer has no reviews yet.</span>
+            <% end %>
+        </li>
+        <li class="list-group-item"><i class="fas fa-user-check"></i><%=" "%><%= @profile.user.name %></li>
+        <li class="list-group-item"><i class="fas fa-address-card"></i><%=" "%><%= @profile.bio %></li>
+        <li class="list-group-item"><%= image_tag ("age.png")%><%=" "%><%= @profile.age  %></li>
+        <li class="list-group-item"><i class="fas fa-trophy"></i><%=" "%><%=@profile.achievments %></li>
+        <li class="list-group-item"><%= image_tag ("medalha.png")%><%=" "%><%= @profile.certifications  %></li>
       </ul>
   </div>
 </div>
 
-<%= link_to "Home", root_path %>

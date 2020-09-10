@@ -1,0 +1,21 @@
+
+
+    <% if trainning.user.profile && trainning.user.profile.photo.attached?  %>
+      <%= cl_image_tag trainning.user.profile.photo.key, class: "avatar avatar" %>
+    <% else %>
+
+    <div class="d-flex justify-content-center border-bottom">
+      <div class="image">
+        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png"%>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="card-body">
+      <p class="card-title" id="title-size"><%= trainning.user.name.capitalize %></p>
+        <!--<p class="card-title">" <%#= trainning.description %> "</p>-->
+    </div>
+        <div>
+          <%= link_to "View", trainning_path(trainning), class: "btn btn-dark btn-sm" %>
+      </div>
+
