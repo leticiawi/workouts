@@ -47,8 +47,15 @@
           <% if @trainning.user.profile %>
             <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-primary btn-sm" %>
           <% end %>
-            <%= link_to "Back To All Trainings", trainnings_path(@trainning), class: "btn btn-primary btn-sm" %>
-            <%= link_to "View Reviews", trainning_reviews_path(@trainning), class: "btn btn-primary btn-sm" %>
+          <div class="row">
+            <div class="col-6">
+            <%= link_to "All Trainings", trainnings_path(@trainning), class: "btn btn-primary-n btn-sm" %>
+            </div>
+            <div class="col-6">
+
+            <%= link_to "View Reviews", trainning_reviews_path(@trainning), class: "btn btn-primary-n btn-sm" %>
+            </div>
+          </div>
 
         </div>
       </div>
