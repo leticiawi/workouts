@@ -38,8 +38,10 @@ class TrainningsController < ApplicationController
   end
 
   def create
+    @price = trainnings_params[:price_cents]
     @trainning = Trainning.new(trainnings_params)
     @trainning.user = current_user
+    @trainning.price_cents = @price.to_i * 100
     @trainning.category = Category.find(params[:trainning][:category])
 
     if @trainning.save
@@ -54,9 +56,13 @@ class TrainningsController < ApplicationController
   end
 
   def update
+    @price = trainnings_params[:price_cents].to_i * 100
     @trainning = Trainning.find(params[:id])
+    @trainning.price_cents = @price
+    new_params = trainnings_params.except(:price_cents)
+    new_params.merge!({:price_cents => @price})
 
-    if @trainning.update(trainnings_params)
+    if @trainning.update(new_params)
       redirect_to trainer_show_path(@trainning)
     else
       render :edit
@@ -91,5 +97,10 @@ class TrainningsController < ApplicationController
 
   def trainnings_params
     params.require(:trainning).permit(:duration, :address, :description, :photo, :price_cents)
+  end
+
+  def set_price
+    price = trainnings_params[:price_cents].to_i * 100
+
   end
 end

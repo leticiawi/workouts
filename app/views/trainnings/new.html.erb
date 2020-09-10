@@ -1,16 +1,17 @@
-<div class="container adjust-height" id="select">
-  <h3>Design you Training Session:</h3>
 
-   <div class="container">
+<div class="container justify-content-center p-3">
+  <div class="border-bottom">
+    <h3>Design your Training Session:</h3>
+  </div>
+
     <%= simple_form_for @trainning do |form| %>
       <%= form.input :category, collection: Category.all %>
       <%= form.input :description %>
       <%= form.input :duration %>
-      <%= form.input :price_cents %>
+      <%= form.input :price_cents, label: "Price" %>
       <%= form.input :address %>
-
       <%= form.submit class: 'btn btn-info btn-block' %>
     <% end %>
-  </div>
-
 </div>
+
+
