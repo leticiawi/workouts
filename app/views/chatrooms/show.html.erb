@@ -1,44 +1,47 @@
 
-   <div class="border-bottom">
-    <div class="row">
-      <div class="col-4">
-        <h5><%= @chatroom.trainer.name %></h5>
-      </div>
-       <div class="col-4">
-        <h5><%= @chatroom.user.name %></h5>
-      </div>
-      <div class="col-4">
-        <h5><%= "Chatroom: #{@chatroom.id}"%></h5>
-      </div>
+<div class="container border-bottom fixed-top chat-title">
+  <div class="row">
+    <div class="col-4">
+      <h5><%= @chatroom.trainer.name %></h5>
     </div>
-      <div>
-        <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-          <% @chatroom.messages.each do |message| %>
-            <div class="container message <%= message.user == current_user ? "sent" : "received"  %>" id="message-<%= message.id %>">
-                  <span ><%= message.user.name %></span>
-              <div class="row">
-                <div class="msg-chat col-12">
-                  <div><%= message.content %></div>
-                  <div class="chat-date"><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></div>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
+    <div class="col-4">
+      <h5><%= @chatroom.user.name %></h5>
     </div>
-
-  <div>
-      <div class="container fixed-bottom">
-        <div class="row">
-          <div class="col-9">
-            <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-              <%= f.input :content, label: false, input_html: { class: 'message-input' } ,  placeholder: "Talk to your buddy!" %>
-          </div>
-          <div class="col-3">
-              <%= f.submit :Send, class: "btn btn-sm btn-info"%>
-          </div>
-            <% end %>
-        </div>
-      </div>
+    <div class="col-4">
+      <h5><%= "Chatroom: #{@chatroom.id}"%></h5>
+    </div>
   </div>
 </div>
+
+
+<div class="container chat-messages overflow-hidden">
+    <div class="container" id="messages" data-chatroom-id="<%= @chatroom.id %>">
+      <% @chatroom.messages.each do |message| %>
+        <div class="container message <%= message.user == current_user ? "sent" : "received"  %>" id="message-<%= message.id %>">
+          <div class="row">
+              <%= message.user.name %>
+            <div class="msg-chat col-12">
+              <%= message.content %>
+            <div class="chat-date">
+              <%= message.created_at.strftime("%a %b %e at %l:%M%p") %>
+          </div>
+        </div>
+    </div>
+  </div>
+      <% end %>
+
+  <div class="container fixed-bottom input-box">
+    <div class="row">
+      <div class="col-9">
+        <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+          <%= f.input :content, label: false, input_html: { class: 'message-input' } ,  placeholder: "       Talk to your buddy!" %>
+      </div>
+      <div class="col-3">
+        <%= button_tag :submit, class: "plane" do %>
+          <i class="fas fa-paper-plane"></i> 
+        <% end %> 
+      </div>
+        <% end %>
+    </div>
+</div>
+
