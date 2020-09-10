@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-<!-- Insert to geocode -->
+    <!-- Insert to geocode -->
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
@@ -16,7 +16,6 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <!-- Crio uma partial do index? -->
 
     <%= yield %>
   </body>
@@ -32,7 +31,7 @@
         <a href="#"><i class="far fa-comments"></i></a>
         <%= button_to destroy_user_session_path, method: :delete, class: "logout-icon" do %>
           <i class="fas fa-sign-out-alt"></i>
-        <% end %>          
+        <% end %>
       <% end %>
 
     </div>
