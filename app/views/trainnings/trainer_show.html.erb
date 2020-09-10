@@ -1,48 +1,40 @@
 <div class="container" id="select">
- <div class="container text-center border-bottom">
-    <h3><%= current_user.name %>'s trainning's details:</h3>
-  </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="trainning-details">
-          <div class="d-flex justify-content-center p-1 border-bottom ">
-            <% if @trainning.user.profile && @trainning.user.profile.photo.attached?  %>
-            <%= cl_image_tag @trainning.user.profile.photo.key, class: "avatar avatar-large" %>
-            <% else %>
-          <div class="image">
-            <%= image_tag "https://i.ibb.co/w7XyQQ5/WOxxx.png", class: "avatar avatar-large"%>
-          </div>
-          <% end %>
-        </div>
-        <div class="card-body">
-
-          <!-- rating p: 13-25 -->
-          <p class="card-title">By: <%= @trainning.user.name %></p>
-          <p class="card-title">
-            <% if @profile.user.reviews.present? %>
-              <% rating = @profile.user.average_rating %>
-              <% rating.times do %>
-                <span class="star_rating"><%= "\u2605" %></span>
-              <% end %>
-              <% (5 - rating).times do %>
-                <span class="empty_star_rating">☆</span>
-              <% end %>
-            <% else %>
-              <span>Trainer has no reviews yet.</span>
-            <% end %>
-          </p>
-          <p class="card-title"> Category: <%= @trainning.category.name %></p>
-          <p class="card-title"> Booked: <%= @orders_count %> times</p>
-          <p class="card-title"><%= @trainning.duration %></p>
-          <p class="card-title">Amount: <%= @trainning.price_cents/100 %> $</p>
-          <p class="card-title">" <%= @trainning.description %> "</p>
-          <%= link_to "Delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, remote: true %>
-          <%= link_to "View All", trainer_index_path, class: "btn btn-primary btn-sm" %>
-          <%= link_to "Edit", edit_trainning_path(@trainning), class: "btn btn-success btn-sm" %>
-          </div>
-        </div>
-        <%# end %>
+<div class="container text-center border-bottom">
+  <h3><%= current_user.name %>'s trainning's details:</h3>
+</div>
+  <div class="trainning-details">
+    <div class="d-flex justify-content-center p-1 border-bottom ">
+      <% if @trainning.user.profile && @trainning.user.profile.photo.attached?  %>
+      <%= cl_image_tag @trainning.user.profile.photo.key, class: "avatar avatar-large" %>
+      <% else %>
+      <div class="image">
+        <%= image_tag "https://i.ibb.co/xJKkKCf/WO-1.png", class: "avatar avatar-large"%>
       </div>
-    <%# end %>
+      <% end %>
+    </div>
+      <div class="card-body">
+        <p class="card-title"><strong>By: </strong><%= @trainning.user.name %></p>
+        <p class="card-title">
+          <% if @profile.user.reviews.present? %>
+            <% rating = @profile.user.average_rating %>
+            <% rating.times do %>
+            <span class="star_rating"><%= "\u2605" %></span>
+          <% end %>
+            <% (5 - rating).times do %>
+            <span class="empty_star_rating">☆</span>
+          <% end %>
+        <% else %>
+          <span>Trainer has no reviews yet.</span>
+        <% end %>
+      </p>
+      <p class="card-title"> <strong>Category:</strong> <%= @trainning.category.name %></p>
+      <p class="card-title"> <strong>Booked:</strong><%= @orders_count %> times</p>
+      <p class="card-title"><%= @trainning.duration %></p>
+      <p class="card-title"><strong>Amount: </strong><%= @trainning.price_cents/100 %> $</p>
+      <p class="card-title">" <%= @trainning.description %> "</p>
+      <%= link_to "Delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, remote: true %>
+      <%= link_to "View All", trainer_index_path, class: "btn btn-primary btn-sm" %>
+      <%= link_to "Edit", edit_trainning_path(@trainning), class: "btn btn-success btn-sm" %>
+    </div>
   </div>
 </div>
