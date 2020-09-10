@@ -1,7 +1,23 @@
-<h1>Index de Chat</h1>
+<div class="container p-3">
 
-<ul>
-  <% @chatrooms.each do |chatroom| %>
-    <li><%= link_to "Chat com #{chatroom.user.name}", chatroom_path(chatroom) %></li>
-  <% end %>
-</ul>
+  <div class="border-bottom">
+    <h3>Chats: <i class="fas fa-smile-wink"></i></h3>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <% @chatrooms.each do |chatroom| %>
+        <ul class="list-group">
+          <li class="list-group-item ">
+            <i class="fas fa-comment-dots" ></i>
+            <%= link_to "Chat com #{chatroom.user.name}", chatroom_path(chatroom) %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
