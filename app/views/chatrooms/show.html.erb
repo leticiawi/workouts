@@ -1,9 +1,12 @@
 <div class="row">
-  <div class="col-6">
+  <div class="col-4">
     <h3><%= @chatroom.trainer.name %></h3>
   </div>
-   <div class="col-6">  
+   <div class="col-4">  
     <h3><%= @chatroom.user.name %></h3>
+  </div>
+  <div class="col-4">  
+    <h5><%= "Chatroom: #{@chatroom.id}"%></h5>
   </div>
   <div>
     <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
@@ -28,10 +31,10 @@
       <div class="row">
         <div class="col-9">
           <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-            <%= f.input :content, label: false, input_html: { class: 'message-input' } ,  placeholder: "Talk to your buddy! #{@chatroom.id}" %>
+            <%= f.input :content, label: false, input_html: { class: 'message-input' } ,  placeholder: "Talk to your buddy!" %>
         </div>
         <div class="col-3">
-            <%= f.submit class: "btn btn-sm btn-info"%>
+            <%= f.submit :Send, class: "btn btn-sm btn-info"%>
         </div>
           <% end %>
       </div>
