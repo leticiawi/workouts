@@ -1,7 +1,7 @@
 <% if !current_user.trainer? %>
   <div class="container" id="select">
     <div class="container text-center border-bottom">
-      <h3 id="username">Hi <%= current_user.name.capitalize! %>!</h3><h5>Where do you want to train today?</h5>
+      <h3 id="username">Hi <%= current_user.name %>!</h3><h5>Where do you want to train today?</h5>
     </div>
 
     <div class="container text-center border-bottom my-3">
@@ -34,7 +34,7 @@
                 <div class="container border-bottom my-2 p-3">
                   <h5>Let´s get moving?</h5>
                 <%#= link_to :Trainnings, trainnings_path, class: "btn-profile"%>
-                <%= link_to :Trainnings, categories_path, class: "btn-profile-dashboard"%>
+                <%= link_to :Trainings, categories_path, class: "btn-profile-dashboard"%>
               </div>
               </div>
 
