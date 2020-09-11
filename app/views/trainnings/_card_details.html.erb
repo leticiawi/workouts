@@ -41,11 +41,11 @@
         <div class="container">
           <%= form_tag orders_path do %>
           <%= hidden_field_tag 'trainning_id', @trainning.id %>
-          <%= submit_tag 'Book Now', class: 'btn btn-danger btn-sm' %>
+          <%= submit_tag 'Book Now', class: 'btn btn-orange btn-sm' %>
           <% end %>
-          <%= link_to "Chat with Trainer", chatrooms_path(trainer_id: @trainning.user.id), method: :post, class: "btn btn-success btn-sm btn-block" %>
+          <%= link_to "Chat with Trainer", chatrooms_path(trainer_id: @trainning.user.id), method: :post, class: "btn btn-dark-grey btn-sm btn-block" %>
           <% if @trainning.user.profile %>
-            <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-primary btn-sm" %>
+            <%= link_to "Trainers Profile ", profile_path(@trainning.user.profile), class: "btn btn-light-grey btn-sm" %>
           <% end %>
           <div class="row">
             <div class="col-6">
