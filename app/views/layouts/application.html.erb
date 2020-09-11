@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Dados do Facebook Open Graph --> 
-    <meta property = "og: title "content = <% = "Workouts: meet online, workouts live!" %>/> 
-    <meta property =" og: type "content =" workouts.run "/> 
-    <meta property =" og: url "content =" <% = request.original_url %> " /> 
-    <meta property = "og: image" content = "<% = "workouts.png" %>" /> 
-    <meta property = "og: image:widht " content =  1200 />
-     <meta property = "og: image:heigth " content =  630 />
-    <meta property = "og: description" content = "<% = "A healthcare app, who motivate you to move!"%>" /> 
-    <meta property = "og : site_name "content =" <% = "Workouts: meet online, workouts live!" %> "/> 
+    <meta property="og:title" content="<%= "Workouts: meet online, workouts live!" %>" /> 
+    <meta property =" og:type "content =" workouts.run "/> 
+    <meta property="og:url" content="<%= request.original_url %>" /> 
+    <meta property = "og:image" content = "<%= meta_image %>" /> 
+    <meta property = "og:image:widht " content =  1200 />
+    <meta property = "og:image:heigth " content =  630 />
+    <meta property = "og:description" content = "<%= "A healthcare app, who motivate you to move!"%>" /> 
+    <meta property = "og:site_name "content =" <%= "Workouts: meet online, workouts live!" %> "/> 
     
     <!-- Insert to geocode -->
     <%= stylesheet_pack_tag 'application', media: 'all' %>
