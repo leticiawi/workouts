@@ -16,7 +16,7 @@
         <p class="card-title"><strong>By: </strong><%= @trainning.user.name %></p>
         <p class="card-title">
           <% if @profile.user.reviews.present? %>
-            <% rating = @profile.user.average_rating %>
+            <% rating = @profile.user.average_rating.to_i %>
             <% rating.times do %>
             <span class="star_rating"><%= "\u2605" %></span>
           <% end %>
@@ -32,9 +32,9 @@
       <p class="card-title"><%= @trainning.duration %></p>
       <p class="card-title"><strong>Amount: </strong><%= @trainning.price_cents/100 %> $</p>
       <p class="card-title">" <%= @trainning.description %> "</p>
-      <%= link_to "Delete", trainning_path(@trainning), class: "btn btn-danger btn-sm", method: :delete, remote: true %>
-      <%= link_to "View All", trainer_index_path, class: "btn btn-primary btn-sm" %>
-      <%= link_to "Edit", edit_trainning_path(@trainning), class: "btn btn-success btn-sm" %>
+      <%= link_to "Delete", trainning_path(@trainning), class: "btn btn-orange btn-sm", method: :delete, remote: true %>
+      <%= link_to "View All", trainer_index_path, class: "btn btn-dark-grey btn-sm" %>
+      <%= link_to "Edit", edit_trainning_path(@trainning), class: "btn btn-dark-grey btn-sm" %>
     </div>
   </div>
 </div>
