@@ -13,7 +13,8 @@
         <div class="card-body">
         <!-- rating p: 13-21 -->
           <p class="card-title">
-            <% rating = @trainning.reviews.average(:rating).to_i %>
+
+            <% rating = @trainning.average_rating %>
             <% rating.times do %>
               <span class="star_rating"><%= "\u2605" %></span>
             <% end %>
