@@ -35,14 +35,16 @@
         <div class="d-flex justify-content-center">
             <div class="row">
               <div class="col-6">
-                <%= link_to "All Trainings", trainnings_path, class: "btn-profile-dash"%>
+                <%= link_to "All Trainings", categories_path, class: "btn-profile-dash"%>
               </div>
               <div class="col-6">
                 <%= link_to "My Trainings", trainer_index_path, class: "btn-profile-dash"%>
               </div>
+              <% if current_user.profile%>
               <div class="col-6">
                 <%= link_to "Add Training", new_trainning_path, class: "btn-profile-dash"%>
               </div>
+              <% end %>
               <div class="col-6">
                 <%= link_to "Chats", chatrooms_path, class: "btn-profile-dash"%>
               </div>
@@ -63,7 +65,7 @@
             <div class="container border mt-5">
               <div class="game-box">
                 <% unless orders_count.nil? %>
-                  <h6>Flashlight count:</h6>
+                  <h6>Comet count:</h6>
                   <% @orders_count.times do %>
                   <i class="fas fa-meteor fa-lg"></i>
                   <% end %>

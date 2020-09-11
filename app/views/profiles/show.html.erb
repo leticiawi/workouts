@@ -11,6 +11,7 @@
 
         <li class="list-group-item">
           <% if @profile.user.reviews.present? %>
+          <% rating = @profile.user.average_rating.to_i %>
               <% rating.times do %>
                 <span class="star_rating"><%= "\u2605" %></span>
               <% end %>

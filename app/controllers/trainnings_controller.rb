@@ -3,14 +3,15 @@ class TrainningsController < ApplicationController
 
   def index
     @profile = current_user.profile
-    @trainnings = Trainning.geocoded.where(category_id: params[:category_id], active: true)
+
     @category_id = params[:category_id]
     if params[:category_id]
-      User.where("user != current_use AND category_id: @category_id ")
-      @trainnings
-    elsif params[:search]
-      @trainnings = @trainnings.near(params[:search][:address], 15)
+      @trainnings = Trainning.geocoded.where(category_id: params[:category_id], active: true)
 
+    elsif params[:search]
+      @trainnings = Trainning.geocoded.where(active: true).near(params[:search][:address], 15)
+    else
+      @trainnings = Trainning.geocoded.where(active: true)
     end
     @markers = @trainnings.geocoded.map do |trainning|
       {

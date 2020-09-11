@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row py-4">
-    <div class="col-md-3"><%= cl_image_tag @order.trainning.user.profile.photo.key, class: "avatar avata-large" %></div>
+    <div class="col-md-3"><%= cl_image_tag(@order.trainning.user.profile.photo.key, height:300, width:355, crop: :thumb, gravity: :face) %></div>
     <div class="col">
       <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
       <ul class="list-unstyled">
         <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <li><strong>TRAINNING: </strong> <%= @order.trainning.description %></li>
-        <li>TOTAL <%= @order.amount/100 %> $</li>
+        <li><strong>TRAINING`s DESCRIPTION: </strong> <%= @order.trainning.description %></li>
+        <li><strong>TOTAL: </strong> <%= @order.amount/100 %> $</li>
       </ul>
-      <p>You will recieve an e-mail with your <strong>trainning details soon!</strong></p>
+      <p>You will recieve an e-mail with your <strong>training`s details soon!</strong></p>
     </div>
   </div>
 </div>
