@@ -14,7 +14,7 @@
            <h2><%= booking.trainning.user.name %></h2>
             <p><strong>Category:</strong> <%= booking.trainning.category.name %></p>
             <p><strong>Duration:</strong> <%= booking.trainning.duration %></p>
-            <%= link_to "Add Review",  new_trainning_review_path(booking), class: "btn-review"%>
+            <%= link_to "Add Review",  new_trainning_review_path(booking.trainning), class: "btn-review"%>
             <!--<p class="card-title">" <%#= trainning.description %> "</p>-->
           </div>
         </div>
